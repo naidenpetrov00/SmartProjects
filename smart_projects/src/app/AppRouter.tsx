@@ -1,17 +1,63 @@
 import { useMemo } from 'react';
 import { QueryClient, useQueryClient } from '@tanstack/react-query';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
 import { paths } from '../config/paths';
 import { AppRootErrorBoundary } from './pages/errors/AppRootErrorBoundary';
 
 export const createAppRouter = (queryClient: QueryClient) =>
   createBrowserRouter([
     {
-      path: paths.home.path,
+      path: '/',
       lazy: async () => {
-        const { HomePage } = await import('./pages/HomePage');
-        return { Component: HomePage };
+        const { AppRoot } = await import('./AppRoot');
+        return { Component: AppRoot };
       },
+      ErrorBoundary: AppRootErrorBoundary,
+      children: [
+        {
+          index: true,
+          lazy: async () => {
+            const { HomePage } = await import('./pages/HomePage');
+            return { Component: HomePage };
+          },
+          ErrorBoundary: AppRootErrorBoundary,
+        },
+        {
+          path: paths.contacts.path,
+          lazy: async () => {
+            const { ContactsPage } = await import('./pages/ContactsPage');
+            return { Component: ContactsPage };
+          },
+          //example for error throwing form loader
+          loader: () => {
+            throw new Response(
+              JSON.stringify({
+                sorry: 'You have been fired.',
+                hrEmail: 'hr@bigco.com',
+              }),
+              { status: 401 },
+            );
+          },
+          ErrorBoundary: AppRootErrorBoundary,
+        },
+        {
+          path: paths.ourWork.path,
+          lazy: async () => {
+            const { OurWorkPage } = await import('./pages/OurWorkPage');
+            return { Component: OurWorkPage };
+          },
+          ErrorBoundary: AppRootErrorBoundary,
+        },
+        {
+          path: paths.aboutUs.path,
+          lazy: async () => {
+            const { AboutUsPage } = await import('./pages/AboutUsPage');
+            return { Component: AboutUsPage };
+          },
+          ErrorBoundary: AppRootErrorBoundary,
+        },
+      ],
     },
     {
       path: '*',

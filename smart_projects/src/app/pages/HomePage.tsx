@@ -1,8 +1,6 @@
-import { HomeLayout } from '../../components/layouts/HomeLayout';
-
 export const HomePage = () => {
   return (
-    <HomeLayout>
+    <div>
       <h1>HomePage</h1>
       <h1>HomePage</h1>
       <h1>HomePage</h1>
@@ -33,6 +31,6 @@ export const HomePage = () => {
       <h1>HomePage</h1>
       <h1>HomePage</h1>
       <h1>HomePage</h1>
-    </HomeLayout>
+    </div>
   );
 };
