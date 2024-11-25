@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Tabs, Tab } from '@mui/material';
 
 import { navigationButtonsOnRightStyle } from './sxStyles';
-import { pagesForNavigationBar } from '../../../config/paths';
+import { paths } from '../../../config/paths';
 
 type NavigationButtonsProps = {
   pathname: string;
@@ -12,17 +12,23 @@ type NavigationButtonsProps = {
 export const NavigationButtons = ({ pathname }: NavigationButtonsProps) => {
   return (
     <Tabs
-      sx={{ ...navigationButtonsOnRightStyle }}
+      id="navigation-tabs"
+      aria-labelledby="page navigation"
+      sx={navigationButtonsOnRightStyle}
       value={pathname}
       textColor="inherit"
     >
-      {pagesForNavigationBar.map((p) => (
+      {Object.values(paths).map((path, index) => (
         <Tab
-          label={p.text}
-          key={p.text}
-          value={p.path}
+          id={`tab-${index}`}
+          color="inherit"
+          label={path.label}
+          key={path.label}
+          value={path.path}
           component={Link}
-          to={p.path}
+          to={path.path}
+          aria-label={`navigate to ${path.label}`}
+          aria-controls={`tabpanel-${index}`}
         />
       ))}
     </Tabs>

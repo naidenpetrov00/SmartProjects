@@ -25,7 +25,12 @@ export const ScrollTop = () => {
         role="presentation"
         sx={{ position: 'fixed', bottom: 16, right: 16 }}
       >
-        <Fab size="small" aria-label="scroll back to top" color="primary">
+        <Fab
+          size="small"
+          aria-label="scroll back to top"
+          title="Scroll to the top of the page"
+          color="secondary"
+        >
           <KeyboardArrowUpIcon color="inherit" />
         </Fab>
       </Box>

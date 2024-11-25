@@ -1,12 +1,12 @@
 import { ReactNode, useState } from 'react';
+import { ErrorBoundary } from 'react-error-boundary';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-import { queryConfig } from '../lib/reactQuery';
-import { ErrorBoundary } from 'react-error-boundary';
-import { MainErrorFallback } from '../components/errors/MainErrorFallback';
-
 import { CssBaseline, ThemeProvider } from '@mui/material';
+
+import { queryConfig } from '../lib/reactQuery';
 import { useCustomTheme } from '../hooks/useCustomTheme';
+import { MainErrorFallback } from '../components/errors/MainErrorFallback';
 
 type AppProviderProps = {
   children: ReactNode;

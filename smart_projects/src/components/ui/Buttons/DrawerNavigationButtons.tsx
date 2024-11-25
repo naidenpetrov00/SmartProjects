@@ -4,7 +4,7 @@ import { Fragment } from 'react/jsx-runtime';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Button, Drawer, Tabs, Tab } from '@mui/material';
 
-import { pagesForNavigationBar } from '../../../config/paths';
+import { paths } from '../../../config/paths';
 import { navigationButtonsOnRightStyle } from './sxStyles';
 
 type DrawerNavigationButtonsProps = {
@@ -24,6 +24,7 @@ export const DrawerNavigationButtons = ({
         onClick={() => setdrawerOpenState(true)}
         sx={navigationButtonsOnRightStyle}
         color="inherit"
+        aria-label="open navigation menu"
       >
         <MenuIcon />
       </Button>
@@ -36,17 +37,27 @@ export const DrawerNavigationButtons = ({
         open={drawerOpenState}
         anchor="right"
         onClose={() => setdrawerOpenState(false)}
+        aria-labelledby="drawer-navigation-title"
       >
-        <Tabs value={pathname} orientation="vertical">
-          {pagesForNavigationBar.map((p) => (
+        <Tabs
+          id="drawer-navigation-tabs"
+          value={pathname}
+          selectionFollowsFocus
+          orientation="vertical"
+          aria-labelledby="drawer page navigation"
+        >
+          {Object.values(paths).map((path, index) => (
             <Tab
+              id={`drawer-tab-${index}`}
               color="inherit"
-              label={p.text}
-              key={p.text}
-              value={p.path}
+              label={path.label}
+              key={path.label}
+              value={path.path}
               component={Link}
               onClick={() => setdrawerOpenState(false)}
-              to={p.path}
+              to={path.path}
+              aria-label={`navigate to ${path.label}`}
+              aria-controls={`drawer-tabpanel-${index}`}
             />
           ))}
         </Tabs>

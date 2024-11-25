@@ -5,7 +5,7 @@ export const AppRootErrorBoundary = () => {
   const data = JSON.parse(error.data);
 
   return (
-    <div>
+    <div role="alert" >
       <h1>{error.status}</h1>
       <h2>{data.sorry}</h2>
       <p>

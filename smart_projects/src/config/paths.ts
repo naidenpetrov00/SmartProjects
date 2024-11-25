@@ -1,21 +1,18 @@
 export const paths = {
   home: {
+    label: 'HOME',
     path: '/',
   },
   contacts: {
+    label: 'CONTACTS',
     path: '/contacts',
   },
   ourWork: {
+    label: 'OUR WORK',
     path: '/ourWork',
   },
   aboutUs: {
+    label: 'ABOUT US',
     path: '/aboutUs',
   },
 } as const;
-
-export const pagesForNavigationBar = [
-  { text: 'HOME', path: paths.home.path },
-  { text: 'CONTACTS', path: paths.contacts.path },
-  { text: 'OUR WORK', path: paths.ourWork.path },
-  { text: 'ABOUT US', path: paths.aboutUs.path },
-];
