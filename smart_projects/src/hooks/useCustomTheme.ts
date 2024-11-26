@@ -6,13 +6,19 @@ const minCharcoal = '#73787C';
 const minGray = '#C5C6C7';
 const minPaleBlue = '#D7E5F0';
 const minBeige = '#C9AD93';
+const colorPallete = {
+  black: '#181C14',
+  gery: '#3C3D37',
+  green: '#697565',
+  white: '#ECDFCC',
+};
 
 export const useCustomTheme = (): Theme => {
   return useMemo(() => {
     return createTheme({
       palette: {
-        primary: { main: minGray },
-        secondary: { main: minCharcoal },
+        primary: { main: colorPallete.black },
+        secondary: { main: colorPallete.green },
       },
     });
   }, []);

@@ -21,7 +21,7 @@ export const NavigationButtons = ({ pathname }: NavigationButtonsProps) => {
       {Object.values(paths).map((path, index) => (
         <Tab
           id={`tab-${index}`}
-          color="inherit"
+          color="primary.contrastText"
           label={path.label}
           key={path.label}
           value={path.path}

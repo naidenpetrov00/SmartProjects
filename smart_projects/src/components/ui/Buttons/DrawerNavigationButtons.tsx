@@ -31,6 +31,7 @@ export const DrawerNavigationButtons = ({
       <Drawer
         sx={{
           '& .MuiDrawer-paper': {
+            bgcolor: 'primary.main',
             width: 200,
           },
         }}
@@ -49,7 +50,6 @@ export const DrawerNavigationButtons = ({
           {Object.values(paths).map((path, index) => (
             <Tab
               id={`drawer-tab-${index}`}
-              color="inherit"
               label={path.label}
               key={path.label}
               value={path.path}
@@ -58,6 +58,12 @@ export const DrawerNavigationButtons = ({
               to={path.path}
               aria-label={`navigate to ${path.label}`}
               aria-controls={`drawer-tabpanel-${index}`}
+              sx={{
+                color: 'secondary.light',
+                '&.Mui-selected': {
+                  color: '#fff',
+                },
+              }}
             />
           ))}
         </Tabs>
