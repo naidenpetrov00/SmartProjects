@@ -8,7 +8,7 @@ const minPaleBlue = '#D7E5F0';
 const minBeige = '#C9AD93';
 const colorPallete = {
   black: '#181C14',
-  gery: '#3C3D37',
+  grey: '#3C3D37',
   green: '#697565',
   white: '#ECDFCC',
 };
@@ -19,6 +19,7 @@ export const useCustomTheme = (): Theme => {
       palette: {
         primary: { main: colorPallete.black },
         secondary: { main: colorPallete.green },
+        background: { paper: colorPallete.grey },
         text: { primary: colorPallete.white, secondary: colorPallete.black },
       },
     });

@@ -25,13 +25,13 @@ export const PhraseRotator = () => {
 
   return (
     <Typography
-      variant={isSmallScreen ? 'h5' : 'h3'}
+      variant={isSmallScreen ? 'h4' : 'h3'}
       sx={{
         position: 'absolute',
         width: '90vw',
         top: {
-          xs: '30%',
-          md: '30%',
+          xs: '40%',
+          md: '40%',
         },
         left: '5%',
         // transform: 'translateX(-50%)',
