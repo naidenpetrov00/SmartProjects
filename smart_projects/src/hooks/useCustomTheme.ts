@@ -19,7 +19,7 @@ export const useCustomTheme = (): Theme => {
       palette: {
         primary: { main: colorPallete.black },
         secondary: { main: colorPallete.green },
-        text: { primary: colorPallete.white },
+        text: { primary: colorPallete.white, secondary: colorPallete.black },
       },
     });
   }, []);

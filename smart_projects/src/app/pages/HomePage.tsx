@@ -1,64 +1,48 @@
 import { Fragment } from 'react/jsx-runtime';
 
-import { Box, Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
 
-import homePhoto from '../../assets/images/home/buildings-6528061_1280.jpg';
-import { useEffect, useState } from 'react';
-
-const phrases = [
-  'Your Partner in Apartment Renovations',
-  'Experts in Home Transformations',
-  'Providing Quality Repairs',
-  'Modern Upgrades for Every Home',
-];
+import { PhraseRotator } from '../../components/ui/Text/PhraseRotator';
+import React from 'react';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import homePhoto from '../../assets/images/home/homePageBuildings.jpg';
+import homePhotoPlaceHolder from '../../assets/images/home/homePageBuildingsPlaceHolder10.jpg';
 
 export const HomePage = () => {
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, []);
+  console.log('home renders');
 
   return (
-    <Fragment>
+    <Stack direction={'column'}>
       <Box
         sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
           zIndex: -1,
-          height: '70vh',
-          width: '100vw',
-          backgroundImage: `url(${homePhoto})`,
+          height: '100vh',
+          // width: '95vw',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           color: 'white',
-          textAlign: 'left',
+          overflow: 'hidden',
         }}
       >
-        <Typography
-          variant={isSmallScreen ? 'h5' : 'h3'}
-          sx={{
+        <LazyLoadImage
+          src={homePhoto}
+          placeholderSrc={homePhotoPlaceHolder}
+          alt="Home Background"
+          effect="opacity"
+          width="100%"
+          height="100%"
+          style={{
             position: 'absolute',
+            top: 0,
+            left: 0,
+            height: '100%',
             width: '100%',
-            top: {
-              xs: '30%',
-              md: '30%',
-            },
-            left: '5%',
-            // transform: 'translateX(-50%)',
-            textShadow: '2px 2px 5px rgba(0, 0, 0, 1)',
+            zIndex: -1,
+            objectFit: 'cover',
           }}
-        >
-          SmartProjects – {phrases[currentPhraseIndex]}
-        </Typography>
+        />
+        <PhraseRotator />
       </Box>
-    </Fragment>
+    </Stack>
   );
 };
