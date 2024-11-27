@@ -29,16 +29,6 @@ export const createAppRouter = (queryClient: QueryClient) =>
             const { ContactsPage } = await import('./pages/ContactsPage');
             return { Component: ContactsPage };
           },
-          //example for error throwing form loader
-          loader: () => {
-            throw new Response(
-              JSON.stringify({
-                sorry: 'You have been fired.',
-                hrEmail: 'hr@bigco.com',
-              }),
-              { status: 401 },
-            );
-          },
           ErrorBoundary: AppRootErrorBoundary,
         },
         {
