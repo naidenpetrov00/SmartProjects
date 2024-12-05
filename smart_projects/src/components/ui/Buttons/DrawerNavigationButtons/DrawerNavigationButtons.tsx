@@ -4,8 +4,9 @@ import { Fragment } from 'react/jsx-runtime';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Button, Drawer, Tabs, Tab } from '@mui/material';
 
-import { paths } from '../../../config/paths';
-import { navigationButtonsOnRightStyle } from './sxStyles';
+import { paths } from '../../../../config/paths';
+
+import { drawerNavigationStyles } from './DrawerNavigationButtons.styles';
 
 type DrawerNavigationButtonsProps = {
   pathname: string;
@@ -22,19 +23,14 @@ export const DrawerNavigationButtons = ({
     <Fragment>
       <Button
         onClick={() => setdrawerOpenState(true)}
-        sx={navigationButtonsOnRightStyle}
+        sx={drawerNavigationStyles.button}
         color="inherit"
         aria-label="open navigation menu"
       >
         <MenuIcon />
       </Button>
       <Drawer
-        sx={{
-          '& .MuiDrawer-paper': {
-            bgcolor: 'primary.main',
-            width: 200,
-          },
-        }}
+        sx={drawerNavigationStyles.drawer}
         open={drawerOpenState}
         anchor="right"
         onClose={() => setdrawerOpenState(false)}
@@ -58,12 +54,7 @@ export const DrawerNavigationButtons = ({
               to={path.path}
               aria-label={`navigate to ${path.label}`}
               aria-controls={`drawer-tabpanel-${index}`}
-              sx={{
-                color: 'secondary.light',
-                '&.Mui-selected': {
-                  color: '#fff',
-                },
-              }}
+              sx={drawerNavigationStyles.tab}
             />
           ))}
         </Tabs>

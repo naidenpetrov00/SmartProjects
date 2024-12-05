@@ -12,7 +12,7 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 
 import { paths } from '../../config/paths';
 import { NavigationButtons } from './Buttons/NavigationButtons';
-import { DrawerNavigationButtons } from './Buttons/DrawerNavigationButtons';
+import { DrawerNavigationButtons } from './Buttons/DrawerNavigationButtons/DrawerNavigationButtons';
 
 export const Header = () => {
   const { pathname } = useLocation();

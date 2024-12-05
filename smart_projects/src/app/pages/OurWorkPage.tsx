@@ -1,7 +1,7 @@
-import { Box, Container, Divider, Stack, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 
-import { MasonryImageList } from '../../components/ui/Images/MasonryImageList';
 import { Hero } from '../../components/ui/Heros/Hero';
+import { MasonryImageList } from '../../components/ui/Images/MasonryImageList';
 
 export const OurWorkPage = () => {
   return (

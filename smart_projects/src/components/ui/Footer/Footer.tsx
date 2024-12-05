@@ -1,81 +1,23 @@
-import * as React from 'react';
-
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
-import TwitterIcon from '@mui/icons-material/X';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import YouTubeIcon from '@mui/icons-material/YouTube';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import InstagramIcon from '@mui/icons-material/Instagram';
 
-import { paths } from '../../config/paths';
+import { Copyright } from '../Copyright';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" sx={{ color: 'primary.contrastText', mt: 1 }}>
-      {'Copyright © '}
-      <Link href="https://mui.com/">SmartProjects</Link>
-      &nbsp;
-      {new Date().getFullYear()}
-    </Typography>
-  );
-}
+import { paths } from '../../../config/paths';
+import { socialLinks } from '../../../config/socialLinks';
+
+import { footerStyles } from './Footer.styles';
 
 export const Footer = () => {
-  const socialLinks = [
-    { href: 'https://facebook.com', icon: <FacebookIcon />, label: 'Facebook' },
-    { href: 'https://x.com', icon: <TwitterIcon />, label: 'Twitter' },
-    {
-      href: 'https://instagram.com',
-      icon: <InstagramIcon />,
-      label: 'Instagram',
-    },
-    { href: 'https://youtube.com', icon: <YouTubeIcon />, label: 'YouTube' },
-  ];
-  const borderTopRadius = 16;
   return (
-    <Box
-      component={'footer'}
-      sx={{
-        bgcolor: 'primary.main',
-        borderTopLeftRadius: borderTopRadius,
-        borderTopRightRadius: borderTopRadius,
-        // '& a': { color: 'primary.contrastText' },
-        '& a': { color: 'secondary.main' },
-        boxShadow:
-          '0px -2px 4px -1px rgba(0, 0, 0, 0.2), 0px -4px 5px 0px rgba(0, 0, 0, 0.14), 0px -1px 10px 0px rgba(0, 0, 0, 0.12);',
-      }}
-    >
-      <Container
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: { xs: 4, sm: 8 },
-          py: { xs: 8, sm: 10 },
-          textAlign: { sm: 'center', md: 'left' },
-        }}
-      >
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' },
-            width: '100%',
-            justifyContent: 'space-between',
-          }}
-          color="primary.contrastText"
-        >
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: 4,
-              minWidth: { xs: '100%', sm: '60%' },
-            }}
-          >
+    <Box component={'footer'} sx={footerStyles.footer}>
+      <Container sx={footerStyles.container}>
+        <Box sx={footerStyles.boxContainer} color="primary.contrastText">
+          <Box sx={footerStyles.boxContent}>
             <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
               <Typography variant="h5">SmartProjects</Typography>
               <Typography
@@ -105,13 +47,7 @@ export const Footer = () => {
               </Typography>
             </Box>
           </Box>
-          <Box
-            sx={{
-              display: { xs: 'none', sm: 'flex' },
-              flexDirection: 'column',
-              gap: 1,
-            }}
-          >
+          <Box sx={footerStyles.boxItems}>
             <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
               Product
             </Typography>
@@ -130,13 +66,7 @@ export const Footer = () => {
               FAQs
             </Link>
           </Box>
-          <Box
-            sx={{
-              display: { xs: 'none', sm: 'flex' },
-              flexDirection: 'column',
-              gap: 1,
-            }}
-          >
+          <Box sx={footerStyles.navigation}>
             <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
               Navigation
             </Typography>
@@ -159,16 +89,7 @@ export const Footer = () => {
             </Box>
           </Box>
         </Box>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            pt: { xs: 4, sm: 8 },
-            width: '100%',
-            borderTop: '1px solid',
-            borderColor: 'primary.contrastText',
-          }}
-        >
+        <Box sx={footerStyles.boxSocial}>
           <div>
             <Copyright />
           </div>

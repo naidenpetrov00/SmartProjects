@@ -1,19 +1,12 @@
 import React from 'react';
 
-import {
-  Box,
-  Card,
-  Link,
-  Paper,
-  Stack,
-  Typography,
-  useTheme,
-} from '@mui/material';
+import { Box, Link, Paper, Stack, Typography } from '@mui/material';
 
-import { Hero } from '../../components/ui/Heros/Hero';
+import { Hero } from '../../../components/ui/Heros/Hero';
+
+import { contactsPageStyles } from './ContactsPage.styles';
 
 export const ContactsPage = () => {
-  const theme = useTheme();
   return (
     <React.Fragment>
       <Hero
@@ -22,28 +15,12 @@ export const ContactsPage = () => {
         description="Have questions or ready to start your apartment transformation? 
       Our team is here to provide expert advice, discuss your project, and bring your vision to life."
       />
-      <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Paper
-          variant="elevation"
-          elevation={24}
-          sx={{
-            width: { xs: '80vw', sm: '30vw' },
-            mt: 4,
-            mb: 4,
-            p: 1,
-            borderRadius: 4,
-          }}
-        >
+      <Box sx={contactsPageStyles.container}>
+        <Paper variant="elevation" elevation={24} sx={contactsPageStyles.paper}>
           <Typography variant="h6" gutterBottom>
             Get in Touch
           </Typography>
-          <Stack
-            gap={2}
-            sx={{
-              margin: '1rem 0',
-              '& a': { color: theme.palette.text.primary },
-            }}
-          >
+          <Stack gap={2} sx={contactsPageStyles.stack}>
             <Typography>
               Email:{' '}
               <Link href="mailto:info@smartprojects.com">

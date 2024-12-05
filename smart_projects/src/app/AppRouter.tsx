@@ -18,7 +18,7 @@ export const createAppRouter = (queryClient: QueryClient) =>
         {
           index: true,
           lazy: async () => {
-            const { HomePage } = await import('./pages/HomePage');
+            const { HomePage } = await import('./pages/HomePage/HomePage');
             return { Component: HomePage };
           },
           ErrorBoundary: AppRootErrorBoundary,
@@ -26,7 +26,9 @@ export const createAppRouter = (queryClient: QueryClient) =>
         {
           path: paths.contacts.path,
           lazy: async () => {
-            const { ContactsPage } = await import('./pages/ContactsPage');
+            const { ContactsPage } = await import(
+              './pages/ContactsPage/ContactsPage'
+            );
             return { Component: ContactsPage };
           },
           ErrorBoundary: AppRootErrorBoundary,

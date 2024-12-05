@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import { Typography, useMediaQuery, useTheme } from '@mui/material';
+import { phraseRotatorStyles } from './PhraseRotator.styles';
 
 const phrases = [
   'Your Partner in Apartment Renovations',
@@ -26,17 +27,7 @@ export const PhraseRotator = () => {
   return (
     <Typography
       variant={isSmallScreen ? 'h4' : 'h3'}
-      sx={{
-        position: 'absolute',
-        width: '90vw',
-        top: {
-          xs: '40%',
-          md: '40%',
-        },
-        left: '5%',
-        // transform: 'translateX(-50%)',
-        textShadow: '2px 2px 5px rgba(0, 0, 0, 1)',
-      }}
+      sx={phraseRotatorStyles.phrase}
     >
       SmartProjects – {phrases[currentPhraseIndex]}
     </Typography>

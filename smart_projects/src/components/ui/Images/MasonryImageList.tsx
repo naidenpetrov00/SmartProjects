@@ -1,15 +1,16 @@
-import * as React from 'react';
 import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { useMediaQuery, useTheme } from '@mui/material';
+
+import { masonryImageListStyles } from './MasonryImageList.styles';
 
 export const MasonryImageList = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <Box sx={{ pl: { xs: 2, sm: 8 }, pr: { xs: 2, sm: 8 } }}>
+    <Box sx={masonryImageListStyles.container}>
       <ImageList variant="masonry" cols={isSmallScreen ? 2 : 4} gap={16}>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
