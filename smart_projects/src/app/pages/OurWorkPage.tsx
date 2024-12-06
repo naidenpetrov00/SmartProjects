@@ -2,6 +2,7 @@ import { Box } from '@mui/material';
 
 import { Hero } from '../../components/ui/Heros/Hero';
 import { MasonryImageList } from '../../components/ui/Images/MasonryImageList';
+import ImagesWithTitleBar from '../../components/ui/Images/ImagesWithTitleBar';
 
 export const OurWorkPage = () => {
   return (
@@ -14,6 +15,7 @@ export const OurWorkPage = () => {
             from minor repairs to full-scale transformations, tailored to meet
             the unique needs of every client."
       ></Hero>
+      <ImagesWithTitleBar />
       <MasonryImageList />
     </Box>
   );

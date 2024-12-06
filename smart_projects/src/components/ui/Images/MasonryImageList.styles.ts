@@ -5,5 +5,5 @@ interface MasonryImageListStyles {
 }
 
 export const masonryImageListStyles: MasonryImageListStyles = {
-  container: { pl: { xs: 2, sm: 8 }, pr: { xs: 2, sm: 8 } },
+  container: { pl: { xs: 2, sm: 8 }, pr: { xs: 2, sm: 8 }, pt: 2 },
 };

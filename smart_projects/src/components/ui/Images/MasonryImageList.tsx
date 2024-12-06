@@ -1,7 +1,14 @@
 import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import { useMediaQuery, useTheme } from '@mui/material';
+import {
+  IconButton,
+  ImageListItemBar,
+  ListSubheader,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
+import InfoIcon from '@mui/icons-material/Info';
 
 import { masonryImageListStyles } from './MasonryImageList.styles';
 
@@ -11,7 +18,10 @@ export const MasonryImageList = () => {
 
   return (
     <Box sx={masonryImageListStyles.container}>
-      <ImageList variant="masonry" cols={isSmallScreen ? 2 : 4} gap={16}>
+      <ImageListItem key="Subheader" cols={2}>
+        <ListSubheader component="div">December</ListSubheader>
+      </ImageListItem>
+      <ImageList variant="masonry" cols={isSmallScreen ? 1 : 4} gap={16}>
         {itemData.map((item) => (
           <ImageListItem key={item.img}>
             <img
@@ -19,6 +29,24 @@ export const MasonryImageList = () => {
               src={`${item.img}?w=248&fit=crop&auto=format`}
               alt={item.title}
               loading="lazy"
+            />
+            <img
+              srcSet={`${item.img}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              src={`${item.img}?w=248&fit=crop&auto=format`}
+              alt={item.title}
+              loading="lazy"
+            />
+            <ImageListItemBar
+              title={item.title}
+              subtitle="Subtitle"
+              actionIcon={
+                <IconButton
+                  sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                  aria-label={`info about ${item.title}`}
+                >
+                  <InfoIcon />
+                </IconButton>
+              }
             />
           </ImageListItem>
         ))}
