@@ -1,11 +1,22 @@
 import { Box, Grid2 as Grid } from '@mui/material';
 
 import { Hero } from '../../components/ui/Heros/Hero';
-import Slider from '../../components/ui/Images/Slider';
 import ImagesWithTitleBar from '../../components/ui/Images/ImagesWithTitleBar';
 import { MasonryImageList } from '../../components/ui/Images/MasonryImageList';
+import { Profiler } from 'react';
+import { Slider } from '../../components/ui/Images/Slider/Slider';
 
 export const OurWorkPage = () => {
+  function onRender(
+    id: any,
+    phase: any,
+    actualDuration: any,
+    baseDuration: any,
+    startTime: any,
+    commitTime: any,
+  ) {
+    console.log(phase);
+  }
   return (
     <Box>
       <Hero
@@ -24,12 +35,12 @@ export const OurWorkPage = () => {
       >
         {Array.from(Array(6)).map((_, index) => (
           <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
-            <Slider />
+            <Profiler id="Slider" onRender={onRender}>
+              <Slider />
+            </Profiler>
           </Grid>
         ))}
       </Grid>
-      <ImagesWithTitleBar />
-      <MasonryImageList />
     </Box>
   );
 };

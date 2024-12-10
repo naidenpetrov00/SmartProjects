@@ -1,17 +1,19 @@
 import { Slide, SlideProps } from 'react-slideshow-image';
 
-import 'react-slideshow-image/dist/styles.css';
-import styles from './Slider.module.css';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import {
-  Button,
   Fab,
-  MobileStepper,
+  IconButton,
+  ImageListItem,
+  ImageListItemBar,
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import { KeyboardArrowLeft, KeyboardArrowRight } from '@mui/icons-material';
+import InfoIcon from '@mui/icons-material/Info';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+
+import 'react-slideshow-image/dist/styles.css';
+import React from 'react';
 
 const properties = {
   easing: 'ease',
@@ -38,29 +40,47 @@ const properties = {
       <KeyboardArrowRightIcon color="inherit" />
     </Fab>
   ),
+  pauseOnHover: true,
+  autoplay: false,
 } as SlideProps;
 
-export default function Slider() {
+export const Slider = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <Slide
       arrows={isSmallScreen ? false : true}
-      transitionDuration={isSmallScreen ? 100 : 700}
+      transitionDuration={isSmallScreen ? 400 : 700}
       {...properties}
     >
       {images.map((slide, index) => {
         return (
-          <div className={styles.slide} key={slide}>
-            <div style={{ backgroundImage: `url(${images[index]})` }}>
-              <span>Slide {index + 1}</span>
-            </div>
-          </div>
+          <ImageListItem key={index}>
+            <img
+              src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+              alt="item images"
+              loading="lazy"
+              style={{ borderRadius: 16 }}
+            />
+            <ImageListItemBar
+              title="Title"
+              subtitle="SubTitle"
+              actionIcon={
+                <IconButton
+                  sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
+                  aria-label="Info about Item"
+                >
+                  <InfoIcon />
+                </IconButton>
+              }
+              sx={{ borderBottomLeftRadius: 16, borderBottomRightRadius: 16 }}
+            />
+          </ImageListItem>
         );
       })}
     </Slide>
   );
-}
+};
 
 const images = [
   'https://cdn.pixabay.com/photo/2020/07/06/01/33/forest-5375005_960_720.jpg',
