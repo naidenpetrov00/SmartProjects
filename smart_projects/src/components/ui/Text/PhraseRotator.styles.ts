@@ -13,7 +13,6 @@ export const phraseRotatorStyles: PhraseRotatorStyles = {
       md: '40%',
     },
     left: '5%',
-    // transform: 'translateX(-50%)',
     textShadow: '2px 2px 5px rgba(0, 0, 0, 1)',
   },
 };

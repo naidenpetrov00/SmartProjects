@@ -1,19 +1,23 @@
+import React, { useState } from 'react';
 import { Slide, SlideProps } from 'react-slideshow-image';
 
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import {
+  Box,
   Fab,
   IconButton,
   ImageListItem,
   ImageListItemBar,
+  Typography,
   useMediaQuery,
   useTheme,
 } from '@mui/material';
+
+import { ImageDetails } from './ImageDetails';
 import InfoIcon from '@mui/icons-material/Info';
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 import 'react-slideshow-image/dist/styles.css';
-import React from 'react';
 
 const properties = {
   easing: 'ease',
@@ -21,8 +25,8 @@ const properties = {
   prevArrow: (
     <Fab
       size="small"
-      aria-label="scroll back to top"
-      title="Scroll to the top of the page"
+      aria-label="Previous slide"
+      title="Previous slide"
       color="secondary"
       sx={{ ml: 1 }}
     >
@@ -32,8 +36,8 @@ const properties = {
   nextArrow: (
     <Fab
       size="small"
-      aria-label="scroll back to top"
-      title="Scroll to the top of the page"
+      aria-label="Next slide"
+      title="Next slide"
       color="secondary"
       sx={{ mr: 1 }}
     >
@@ -45,40 +49,55 @@ const properties = {
 } as SlideProps;
 
 export const Slider = () => {
+  const [detailsShowed, setDetailsShowed] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   return (
-    <Slide
-      arrows={isSmallScreen ? false : true}
-      transitionDuration={isSmallScreen ? 400 : 700}
-      {...properties}
-    >
-      {images.map((slide, index) => {
-        return (
-          <ImageListItem key={index}>
-            <img
-              src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
-              alt="item images"
-              loading="lazy"
-              style={{ borderRadius: 16 }}
-            />
-            <ImageListItemBar
-              title="Title"
-              subtitle="SubTitle"
-              actionIcon={
-                <IconButton
-                  sx={{ color: 'rgba(255, 255, 255, 0.54)' }}
-                  aria-label="Info about Item"
+    <React.Fragment>
+      <Slide
+        arrows={!isSmallScreen && !detailsShowed}
+        transitionDuration={isSmallScreen ? 400 : 700}
+        {...properties}
+      >
+        {images.map((slide, index) => {
+          return (
+            <ImageListItem key={index}>
+              <img
+                src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+                alt="item images"
+                loading="lazy"
+                style={{ borderRadius: 16, display: 'block' }}
+              />
+              {detailsShowed && (
+                <Box
+                  sx={{
+                    borderRadius: 4,
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    bottom: 0,
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Transparent black background
+                    color: 'white',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: 1,
+                    textAlign: 'center',
+                  }}
                 >
-                  <InfoIcon />
-                </IconButton>
-              }
-              sx={{ borderBottomLeftRadius: 16, borderBottomRightRadius: 16 }}
-            />
-          </ImageListItem>
-        );
-      })}
-    </Slide>
+                  <Box>
+                    <h3 style={{ margin: 0 }}>Slide {index + 1}</h3>
+                    <p>Custom overlay text for the image</p>
+                  </Box>
+                </Box>
+              )}
+            </ImageListItem>
+          );
+        })}
+      </Slide>
+      {!detailsShowed && <ImageDetails onDetailsShow={setDetailsShowed} />}
+    </React.Fragment>
   );
 };
 
