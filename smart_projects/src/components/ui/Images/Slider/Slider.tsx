@@ -1,23 +1,33 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Slide, SlideProps } from 'react-slideshow-image';
 
-import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import {
   Box,
   Fab,
   IconButton,
   ImageListItem,
+  Slide as MuiSlide,
   ImageListItemBar,
-  Typography,
   useMediaQuery,
   useTheme,
+  Collapse,
 } from '@mui/material';
-
-import { ImageDetails } from './ImageDetails';
 import InfoIcon from '@mui/icons-material/Info';
+import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+
+import { ImageDetails } from '../ImageDetails';
 
 import 'react-slideshow-image/dist/styles.css';
+import './Slider.css';
+import { sliderStyles } from './Slider.styles';
+
+const images = [
+  'https://cdn.pixabay.com/photo/2020/07/06/01/33/forest-5375005_960_720.jpg',
+  'https://cdn.pixabay.com/photo/2015/02/24/15/41/wolf-647528_960_720.jpg',
+  'https://cdn.pixabay.com/photo/2021/01/21/15/54/books-5937716_960_720.jpg',
+  'https://cdn.pixabay.com/photo/2015/04/23/21/59/tree-736875_960_720.jpg',
+];
 
 const properties = {
   easing: 'ease',
@@ -53,57 +63,57 @@ export const Slider = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   return (
-    <React.Fragment>
+    <Box sx={sliderStyles.container}>
       <Slide
+        {...properties}
         arrows={!isSmallScreen && !detailsShowed}
         transitionDuration={isSmallScreen ? 400 : 700}
-        {...properties}
+        canSwipe={!detailsShowed}
       >
         {images.map((slide, index) => {
           return (
-            <ImageListItem key={index}>
+            <ImageListItem key={index} sx={sliderStyles.imageListItem}>
               <img
-                src="https://images.unsplash.com/photo-1551963831-b3b1ca40c98e"
+                src={images[index]}
                 alt="item images"
                 loading="lazy"
-                style={{ borderRadius: 16, display: 'block' }}
+                style={sliderStyles.image}
               />
-              {detailsShowed && (
-                <Box
-                  sx={{
-                    borderRadius: 4,
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    right: 0,
-                    bottom: 0,
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)', // Transparent black background
-                    color: 'white',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    zIndex: 1,
-                    textAlign: 'center',
-                  }}
-                >
-                  <Box>
-                    <h3 style={{ margin: 0 }}>Slide {index + 1}</h3>
-                    <p>Custom overlay text for the image</p>
-                  </Box>
-                </Box>
-              )}
+              <MuiSlide
+                in={detailsShowed}
+                // mountOnEnter
+                // unmountOnExit
+                // orientation="horizontal"
+                // timeout={100}
+              >
+                <div>
+                  <ImageDetails onCloseBtnClick={setDetailsShowed} />
+                </div>
+              </MuiSlide>
+              {/* {detailsShowed && (
+                <ImageDetails onCloseBtnClick={setDetailsShowed} />
+              )} */}
             </ImageListItem>
           );
         })}
       </Slide>
-      {!detailsShowed && <ImageDetails onDetailsShow={setDetailsShowed} />}
-    </React.Fragment>
+      {!detailsShowed && (
+        <ImageListItemBar
+          title="Title"
+          subtitle="SubTitle"
+          actionIcon={
+            <IconButton
+              size="large"
+              sx={sliderStyles.iconButton}
+              aria-label="Info about Item Images"
+              onClick={() => setDetailsShowed((state) => !state)}
+            >
+              <InfoIcon sx={sliderStyles.infoIcon} />
+            </IconButton>
+          }
+          sx={sliderStyles.imageItemBar}
+        />
+      )}
+    </Box>
   );
 };
-
-const images = [
-  'https://cdn.pixabay.com/photo/2020/07/06/01/33/forest-5375005_960_720.jpg',
-  'https://cdn.pixabay.com/photo/2015/02/24/15/41/wolf-647528_960_720.jpg',
-  'https://cdn.pixabay.com/photo/2021/01/21/15/54/books-5937716_960_720.jpg',
-  'https://cdn.pixabay.com/photo/2015/04/23/21/59/tree-736875_960_720.jpg',
-];

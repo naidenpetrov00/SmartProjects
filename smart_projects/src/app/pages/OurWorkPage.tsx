@@ -3,16 +3,20 @@ import { Box, Grid2 as Grid } from '@mui/material';
 import { Hero } from '../../components/ui/Heros/Hero';
 import { Slider } from '../../components/ui/Images/Slider/Slider';
 
+const titleWhite = 'Our latest';
+const titleBlack = 'projects';
+const description = `Explore our latest projects. At SmartProjects, we take pride in
+delivering high-quality apartment renovations. Our expertise spans
+from minor repairs to full-scale transformations, tailored to meet
+the unique needs of every client.`;
+
 export const OurWorkPage = () => {
   return (
     <Box component="section">
       <Hero
-        titleWhite="Our latest"
-        titleBlack="projects"
-        description="Explore our latest projects. At SmartProjects, we take pride in
-            delivering high-quality apartment renovations. Our expertise spans
-            from minor repairs to full-scale transformations, tailored to meet
-            the unique needs of every client."
+        titleWhite={titleWhite}
+        titleBlack={titleBlack}
+        description={description}
       ></Hero>
       <Grid
         container
