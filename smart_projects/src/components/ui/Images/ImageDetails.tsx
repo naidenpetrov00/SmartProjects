@@ -32,8 +32,8 @@ export const ImageDetails = ({ onCloseBtnClick }: ImageDetailsProps) => {
           overflowY: 'auto',
           maxHeight: '90%',
           '&::-webkit-scrollbar': { display: 'none' }, // Chrome, Safari
-          '-ms-overflow-style': 'none', // IE 10+
-          'scrollbar-width': 'none',
+          msOverflowStyle: 'none', // IE 10+
+          scrollbarWidth: 'none',
         }}
       >
         <Typography variant="h5">ЧСИ 841 Office</Typography>

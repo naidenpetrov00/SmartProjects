@@ -4,30 +4,20 @@ import { Slide, SlideProps } from 'react-slideshow-image';
 import {
   Box,
   Fab,
-  IconButton,
   ImageListItem,
   Slide as MuiSlide,
-  ImageListItemBar,
   useMediaQuery,
   useTheme,
-  Collapse,
 } from '@mui/material';
-import InfoIcon from '@mui/icons-material/Info';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 
 import { ImageDetails } from '../ImageDetails';
+import { ImageDescription } from '../ImageDescription';
 
-import 'react-slideshow-image/dist/styles.css';
 import './Slider.css';
+import 'react-slideshow-image/dist/styles.css';
 import { sliderStyles } from './Slider.styles';
-
-const images = [
-  'https://cdn.pixabay.com/photo/2020/07/06/01/33/forest-5375005_960_720.jpg',
-  'https://cdn.pixabay.com/photo/2015/02/24/15/41/wolf-647528_960_720.jpg',
-  'https://cdn.pixabay.com/photo/2021/01/21/15/54/books-5937716_960_720.jpg',
-  'https://cdn.pixabay.com/photo/2015/04/23/21/59/tree-736875_960_720.jpg',
-];
 
 const properties = {
   easing: 'ease',
@@ -58,10 +48,15 @@ const properties = {
   autoplay: false,
 } as SlideProps;
 
-export const Slider = () => {
+interface SliderProperties {
+  images: [string];
+}
+
+export const Slider = ({ images }: SliderProperties) => {
   const [detailsShowed, setDetailsShowed] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  
   return (
     <Box sx={sliderStyles.container}>
       <Slide
@@ -79,41 +74,16 @@ export const Slider = () => {
                 loading="lazy"
                 style={sliderStyles.image}
               />
-              <MuiSlide
-                in={detailsShowed}
-                // mountOnEnter
-                // unmountOnExit
-                // orientation="horizontal"
-                // timeout={100}
-              >
+              <MuiSlide in={detailsShowed}>
                 <div>
                   <ImageDetails onCloseBtnClick={setDetailsShowed} />
                 </div>
               </MuiSlide>
-              {/* {detailsShowed && (
-                <ImageDetails onCloseBtnClick={setDetailsShowed} />
-              )} */}
             </ImageListItem>
           );
         })}
       </Slide>
-      {!detailsShowed && (
-        <ImageListItemBar
-          title="Title"
-          subtitle="SubTitle"
-          actionIcon={
-            <IconButton
-              size="large"
-              sx={sliderStyles.iconButton}
-              aria-label="Info about Item Images"
-              onClick={() => setDetailsShowed((state) => !state)}
-            >
-              <InfoIcon sx={sliderStyles.infoIcon} />
-            </IconButton>
-          }
-          sx={sliderStyles.imageItemBar}
-        />
-      )}
+      {!detailsShowed && <ImageDescription onShowBtnClick={setDetailsShowed} />}
     </Box>
   );
 };

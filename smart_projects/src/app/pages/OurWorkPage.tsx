@@ -26,7 +26,7 @@ export const OurWorkPage = () => {
       >
         {Array.from(Array(6)).map((_, index) => (
           <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
-            <Slider />
+            <Slider images={}/>
           </Grid>
         ))}
       </Grid>
