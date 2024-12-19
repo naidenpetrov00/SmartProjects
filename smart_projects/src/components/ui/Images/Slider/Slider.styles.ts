@@ -17,12 +17,14 @@ export const sliderStyles: SliderStyles = {
     height: '400px !important',
   },
   image: {
+    // height:'100%',
+    width:'100%',
     borderRadius: '16px',
-    display: 'block',
+    // display: 'block',
   },
   imageItemBar: {
-    borderBottomLeftRadius: 16,
-    borderBottomRightRadius: 16,
+    // borderBottomLeftRadius: 16,
+    // borderBottomRightRadius: 16,
     position: 'relative',
     top: -105,
   },

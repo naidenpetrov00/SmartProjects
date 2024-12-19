@@ -18,6 +18,7 @@ import { ImageDescription } from '../ImageDescription';
 import './Slider.css';
 import 'react-slideshow-image/dist/styles.css';
 import { sliderStyles } from './Slider.styles';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const properties = {
   easing: 'ease',
@@ -56,7 +57,8 @@ export const Slider = ({ images }: SliderProperties) => {
   const [detailsShowed, setDetailsShowed] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   return (
     <Box sx={sliderStyles.container}>
       <Slide
@@ -64,16 +66,24 @@ export const Slider = ({ images }: SliderProperties) => {
         arrows={!isSmallScreen && !detailsShowed}
         transitionDuration={isSmallScreen ? 400 : 700}
         canSwipe={!detailsShowed}
+        onChange={(from, to) => setCurrentSlide(to)}
       >
         {images.map((slide, index) => {
           return (
             <ImageListItem key={index} sx={sliderStyles.imageListItem}>
-              <img
+              <LazyLoadImage
+                // <img
                 src={images[index]}
                 alt="item images"
-                loading="lazy"
-                style={sliderStyles.image}
+                // effect="blur"
+                // loading={index <= 2 ? 'eager' : 'lazy'}
+                loading="eager"
+                style={{
+                  display: currentSlide === index ? 'block' : 'none',
+                  ...sliderStyles.image,
+                }}
               />
+              <h1 id="opopop">{index}</h1>
               <MuiSlide in={detailsShowed}>
                 <div>
                   <ImageDetails onCloseBtnClick={setDetailsShowed} />

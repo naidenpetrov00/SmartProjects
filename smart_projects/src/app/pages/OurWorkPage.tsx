@@ -9,8 +9,86 @@ const description = `Explore our latest projects. At SmartProjects, we take prid
 delivering high-quality apartment renovations. Our expertise spans
 from minor repairs to full-scale transformations, tailored to meet
 the unique needs of every client.`;
+//@ts-ignore
+// function importAll(r) {
+//   let images = {};
+//   //@ts-ignore
+//   r.keys().map((item) => {
+//     //@ts-ignore
+//     images[item.replace('./', '')] = r(item);
+//   });
+//   return images;
+// }
+// const images = importAll(
+//   //@ts-ignore
+//   require.context(
+//     `../../assets/images/places/${'Gard'}`,
+//     false,
+//     /\.(png|jpe?g|svg)$/,
+//   ),
+// );
+
+interface GetImages {
+  [key: string]: () => [string];
+}
+
+const getImages: GetImages = {
+  Gard: () => {
+    //@ts-ignore
+    const context = require.context(
+      `../../assets/images/places/Gard/`,
+      false,
+      /\.(png|jpe?g|svg)$/,
+    );
+    const images = context.keys().map(context);
+    return images;
+  },
+  Gost: () => {
+    //@ts-ignore
+    const context = require.context(
+      `../../assets/images/places/Gost`,
+      false,
+      /\.(png|jpe?g|svg)$/,
+    );
+    const images = context.keys().map(context);
+    return images;
+  },
+  Gostinyata: () => {
+    //@ts-ignore
+    const context = require.context(
+      `../../assets/images/places/Gostinyata`,
+      false,
+      /\.(png|jpe?g|svg)$/,
+    );
+    const images = context.keys().map(context);
+    return images;
+  },
+  San: () => {
+    //@ts-ignore
+    const context = require.context(
+      `../../assets/images/places/San`,
+      false,
+      /\.(png|jpe?g|svg)$/,
+    );
+    const images = context.keys().map(context);
+    return images;
+  },
+  Spa: () => {
+    //@ts-ignore
+    const context = require.context(
+      `../../assets/images/places/Spa`,
+      false,
+      /\.(png|jpe?g|svg)$/,
+    );
+    const images = context.keys().map(context);
+    return images;
+  },
+};
 
 export const OurWorkPage = () => {
+  // const images = importOurWorkImagesFromFolder('Gard');
+  // console.log(getImages.Gard());
+
   return (
     <Box component="section">
       <Hero
@@ -18,18 +96,24 @@ export const OurWorkPage = () => {
         titleBlack={titleBlack}
         description={description}
       ></Hero>
-      <Grid
-        container
-        spacing={{ xs: 2, md: 3 }}
-        columns={{ xs: 2, sm: 8 }}
-        sx={{ ml: 2, mr: 2, mt: 2 }}
-      >
-        {Array.from(Array(6)).map((_, index) => (
-          <Grid key={index} size={{ xs: 2, sm: 4, md: 4 }}>
-            <Slider images={}/>
-          </Grid>
-        ))}
-      </Grid>
+      <OurWorkImages />
     </Box>
+  );
+};
+
+export const OurWorkImages = () => {
+  return (
+    <Grid
+      container
+      spacing={{ xs: 2, md: 3 }}
+      columns={{ xs: 2, sm: 8 }}
+      sx={{ ml: 2, mr: 2, mt: 2 }}
+    >
+      {Object.entries(getImages).map(([folder, images]) => (
+        <Grid size={{ xs: 2, sm: 4, md: 4 }}>
+          <Slider images={images()} />
+        </Grid>
+      ))}
+    </Grid>
   );
 };
