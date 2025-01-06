@@ -11,20 +11,20 @@ interface SliderStyles {
 
 export const sliderStyles: SliderStyles = {
   container: {
-    height: '450px',
+    height: '380px',
   },
   imageListItem: {
-    height: '400px !important',
+    height: '350px !important',
   },
   image: {
-    // height:'100%',
-    width:'100%',
+    height: '100%',
+    width: '100%',
     borderRadius: '16px',
     // display: 'block',
   },
   imageItemBar: {
-    // borderBottomLeftRadius: 16,
-    // borderBottomRightRadius: 16,
+    borderBottomLeftRadius: 16,
+    borderBottomRightRadius: 16,
     position: 'relative',
     top: -105,
   },

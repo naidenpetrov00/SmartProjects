@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Slide, SlideProps } from 'react-slideshow-image';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 import {
   Box,
@@ -16,11 +17,10 @@ import { ImageDetails } from '../ImageDetails';
 import { ImageDescription } from '../ImageDescription';
 
 import './Slider.css';
-import 'react-slideshow-image/dist/styles.css';
 import { sliderStyles } from './Slider.styles';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-slideshow-image/dist/styles.css';
 
-const properties = {
+const slideProperties = {
   easing: 'ease',
   indicators: true,
   prevArrow: (
@@ -62,28 +62,27 @@ export const Slider = ({ images }: SliderProperties) => {
   return (
     <Box sx={sliderStyles.container}>
       <Slide
-        {...properties}
-        arrows={!isSmallScreen && !detailsShowed}
+        {...slideProperties}
+        arrows={!detailsShowed}
         transitionDuration={isSmallScreen ? 400 : 700}
-        canSwipe={!detailsShowed}
+        canSwipe={false}
         onChange={(from, to) => setCurrentSlide(to)}
       >
         {images.map((slide, index) => {
           return (
             <ImageListItem key={index} sx={sliderStyles.imageListItem}>
               <LazyLoadImage
-                // <img
                 src={images[index]}
                 alt="item images"
-                // effect="blur"
-                // loading={index <= 2 ? 'eager' : 'lazy'}
-                loading="eager"
+                effect="blur"
                 style={{
-                  display: currentSlide === index ? 'block' : 'none',
+                  display:
+                    index === currentSlide + 1 || currentSlide === index
+                      ? 'block'
+                      : 'none',
                   ...sliderStyles.image,
                 }}
               />
-              <h1 id="opopop">{index}</h1>
               <MuiSlide in={detailsShowed}>
                 <div>
                   <ImageDetails onCloseBtnClick={setDetailsShowed} />

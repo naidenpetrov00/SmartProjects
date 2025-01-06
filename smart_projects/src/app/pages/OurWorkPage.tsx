@@ -9,24 +9,6 @@ const description = `Explore our latest projects. At SmartProjects, we take prid
 delivering high-quality apartment renovations. Our expertise spans
 from minor repairs to full-scale transformations, tailored to meet
 the unique needs of every client.`;
-//@ts-ignore
-// function importAll(r) {
-//   let images = {};
-//   //@ts-ignore
-//   r.keys().map((item) => {
-//     //@ts-ignore
-//     images[item.replace('./', '')] = r(item);
-//   });
-//   return images;
-// }
-// const images = importAll(
-//   //@ts-ignore
-//   require.context(
-//     `../../assets/images/places/${'Gard'}`,
-//     false,
-//     /\.(png|jpe?g|svg)$/,
-//   ),
-// );
 
 interface GetImages {
   [key: string]: () => [string];
@@ -38,7 +20,7 @@ const getImages: GetImages = {
     const context = require.context(
       `../../assets/images/places/Gard/`,
       false,
-      /\.(png|jpe?g|svg)$/,
+      /\.(png|jpe?g|svg|webp)$/,
     );
     const images = context.keys().map(context);
     return images;
@@ -46,9 +28,9 @@ const getImages: GetImages = {
   Gost: () => {
     //@ts-ignore
     const context = require.context(
-      `../../assets/images/places/Gost`,
+      `../../assets/images/places/Gost/`,
       false,
-      /\.(png|jpe?g|svg)$/,
+      /\.(png|jpe?g|svg|webp)$/,
     );
     const images = context.keys().map(context);
     return images;
@@ -56,9 +38,9 @@ const getImages: GetImages = {
   Gostinyata: () => {
     //@ts-ignore
     const context = require.context(
-      `../../assets/images/places/Gostinyata`,
+      `../../assets/images/places/Gostinyata/`,
       false,
-      /\.(png|jpe?g|svg)$/,
+      /\.(png|jpe?g|svg|webp)$/,
     );
     const images = context.keys().map(context);
     return images;
@@ -66,9 +48,9 @@ const getImages: GetImages = {
   San: () => {
     //@ts-ignore
     const context = require.context(
-      `../../assets/images/places/San`,
+      `../../assets/images/places/San/`,
       false,
-      /\.(png|jpe?g|svg)$/,
+      /\.(png|jpe?g|svg|webp)$/,
     );
     const images = context.keys().map(context);
     return images;
@@ -76,9 +58,9 @@ const getImages: GetImages = {
   Spa: () => {
     //@ts-ignore
     const context = require.context(
-      `../../assets/images/places/Spa`,
+      `../../assets/images/places/Spa/`,
       false,
-      /\.(png|jpe?g|svg)$/,
+      /\.(png|jpe?g|svg|webp)$/,
     );
     const images = context.keys().map(context);
     return images;
@@ -86,9 +68,6 @@ const getImages: GetImages = {
 };
 
 export const OurWorkPage = () => {
-  // const images = importOurWorkImagesFromFolder('Gard');
-  // console.log(getImages.Gard());
-
   return (
     <Box component="section">
       <Hero
@@ -107,7 +86,7 @@ export const OurWorkImages = () => {
       container
       spacing={{ xs: 2, md: 3 }}
       columns={{ xs: 2, sm: 8 }}
-      sx={{ ml: 2, mr: 2, mt: 2 }}
+      sx={{ ml: 2, mr: 2, mt: 2, mb: 2 }}
     >
       {Object.entries(getImages).map(([folder, images]) => (
         <Grid size={{ xs: 2, sm: 4, md: 4 }}>

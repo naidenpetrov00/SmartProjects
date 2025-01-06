@@ -8,7 +8,8 @@ import homePhoto from '../../../assets/images/home/homePageBuildings.jpg';
 import homePhotoPlaceHolder from '../../../assets/images/home/homePageBuildingsPlaceHolder10.jpg';
 
 import { homePageStyles } from './HomePage.styles';
-import { OurWorkImages, OurWorkPage } from '../OurWorkPage';
+import { OurWorkPage } from '../OurWorkPage';
+import Timeline from '../../../components/ui/Timeline/Timeline';
 
 export const HomePage = () => {
   console.log('home renders');
@@ -29,6 +30,9 @@ export const HomePage = () => {
           <PhraseRotator />
         </Box>
       </Stack>
+      {/* <Box component="section">
+        <Timeline />
+      </Box> */}
       <Box component="section">
         <OurWorkPage />
       </Box>

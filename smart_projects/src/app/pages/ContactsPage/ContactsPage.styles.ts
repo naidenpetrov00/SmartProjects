@@ -2,6 +2,7 @@ import { SxProps, Theme } from '@mui/material';
 
 interface ContactsPageStyles {
   container: SxProps<Theme>;
+  contactContainer: SxProps<Theme>;
   paper: SxProps<Theme>;
   stack: SxProps<Theme>;
 }
@@ -10,6 +11,10 @@ export const contactsPageStyles: ContactsPageStyles = {
   container: {
     display: 'flex',
     justifyContent: 'center',
+  },
+  contactContainer: {
+    display: 'flex',
+    gap: 1,
   },
   paper: {
     width: { xs: '80vw', sm: '30vw' },
