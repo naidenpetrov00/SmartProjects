@@ -7,7 +7,7 @@ import { heroStyles } from './Hero.styles';
 interface HeroProps {
   titleWhite: String;
   titleBlack: String;
-  description: String;
+  description?: String;
 }
 
 export const Hero = ({ titleWhite, titleBlack, description }: HeroProps) => {
