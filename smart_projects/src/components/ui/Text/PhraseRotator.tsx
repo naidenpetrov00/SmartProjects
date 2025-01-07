@@ -14,7 +14,6 @@ export const PhraseRotator = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
-  console.log('phrase renders');
 
   useEffect(() => {
     const interval = setInterval(() => {

@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import Link from '@mui/material/Link';
+import { Link as LinkMUI } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
@@ -11,8 +11,13 @@ import { paths } from '../../../config/paths';
 import { socialLinks } from '../../../config/socialLinks';
 
 import { footerStyles } from './Footer.styles';
+import { useMediaQuery, useTheme } from '@mui/material';
+import { LinkButtonUnderline } from '../Buttons/LinkButtonUnderline';
 
 export const Footer = () => {
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <Box component={'footer'} sx={footerStyles.footer}>
       <Container sx={footerStyles.container}>
@@ -23,7 +28,7 @@ export const Footer = () => {
               <Typography
                 variant="body2"
                 gutterBottom
-                sx={{ fontWeight: 600, mt: 2 }}
+                sx={{ fontWeight: 600, mt: 3 }}
               >
                 Contacts us.
               </Typography>
@@ -32,18 +37,21 @@ export const Footer = () => {
               </Typography>
               <Typography variant="body2" sx={{ mb: 1 }}>
                 Email:{' '}
-                <Link
+                <LinkMUI
                   href="mailto:info@smartprojects.com"
                   aria-label="Send email to info@smartprojects.com"
                 >
                   info@smartprojects.com
-                </Link>
+                </LinkMUI>
               </Typography>
               <Typography variant="body2">
                 Phone:{' '}
-                <Link href="tel:+123456789" aria-label="Call +359 87 910 9421">
+                <LinkMUI
+                  href="tel:+123456789"
+                  aria-label="Call +359 87 910 9421"
+                >
                   +359 87 910 9421
-                </Link>
+                </LinkMUI>
               </Typography>
             </Box>
           </Box>
@@ -51,23 +59,26 @@ export const Footer = () => {
             <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
               Product
             </Typography>
-            <Link
+            <LinkMUI
               variant="body2"
               href="#"
               aria-label="Learn about product pricing"
             >
               Pricing
-            </Link>
-            <Link
+            </LinkMUI>
+            <LinkMUI
               variant="body2"
               href="#"
               aria-label="Learn from frequently asked questions"
             >
               FAQs
-            </Link>
+            </LinkMUI>
           </Box>
           <Box sx={footerStyles.navigation}>
-            <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
+            <Typography
+              variant="body1"
+              sx={{ fontWeight: 'medium', mt: isSmallScreen ? 3 : 0 }}
+            >
               Navigation
             </Typography>
             <Box
@@ -80,10 +91,10 @@ export const Footer = () => {
               }}
             >
               {Object.values(paths).map((path, index) => (
-                <div>
-                  <Link key={index} variant="body2" href={path.path}>
+                <div key={index}>
+                  <LinkButtonUnderline key={index} to={path.path}>
                     {path.label}
-                  </Link>
+                  </LinkButtonUnderline>
                 </div>
               ))}
             </Box>
