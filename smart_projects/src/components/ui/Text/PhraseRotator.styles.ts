@@ -9,7 +9,7 @@ export const phraseRotatorStyles: PhraseRotatorStyles = {
     position: 'absolute',
     width: '90vw',
     top: {
-      xs: '40%',
+      xs: '20%',
       md: '40%',
     },
     left: '5%',

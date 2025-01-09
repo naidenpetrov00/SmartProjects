@@ -8,15 +8,20 @@ interface HeroProps {
   titleWhite: String;
   titleBlack: String;
   description?: String;
+  divider?: boolean;
 }
 
-export const Hero = ({ titleWhite, titleBlack, description }: HeroProps) => {
-  // export const Hero = () => {
+export const Hero = ({
+  titleWhite,
+  titleBlack,
+  description,
+  divider = true,
+}: HeroProps) => {
   const theme = useTheme();
   return (
     <React.Fragment>
       <Container sx={heroStyles.container}>
-        <Stack spacing={2} useFlexGap sx={heroStyles.stack}>
+        <Stack spacing={2} useFlexGap sx={heroStyles.stack} >
           <Typography variant="h1" sx={heroStyles.title}>
             {titleWhite}&nbsp;
             <Typography
@@ -30,7 +35,7 @@ export const Hero = ({ titleWhite, titleBlack, description }: HeroProps) => {
           <Typography sx={heroStyles.description}>{description}</Typography>
         </Stack>
       </Container>
-      <Divider></Divider>
+      {divider && <Divider></Divider>}
     </React.Fragment>
   );
 };

@@ -1,8 +1,8 @@
 import { SxProps } from '@mui/material';
 
 interface SliderStyles {
-  container: SxProps;
-  imageListItem: SxProps;
+  container: (isSmallScreen: boolean) => SxProps;
+  imageListItem: (isSmallScreen: boolean) => SxProps;
   image: React.CSSProperties;
   imageItemBar: SxProps;
   iconButton: SxProps;
@@ -10,12 +10,12 @@ interface SliderStyles {
 }
 
 export const sliderStyles: SliderStyles = {
-  container: {
-    height: '380px',
-  },
-  imageListItem: {
-    height: '350px !important',
-  },
+  container: (isSmallScreen) => ({
+    height: isSmallScreen ? '370px' : '530px',
+  }),
+  imageListItem: (isSmallScreen) => ({
+    height: isSmallScreen ? '340px !important' : '500px !important',
+  }),
   image: {
     height: '100%',
     width: '100%',

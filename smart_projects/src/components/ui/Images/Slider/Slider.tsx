@@ -60,7 +60,7 @@ export const Slider = ({ images }: SliderProperties) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   return (
-    <Box sx={sliderStyles.container}>
+    <Box sx={sliderStyles.container(isSmallScreen)}>
       <Slide
         {...slideProperties}
         arrows={!detailsShowed}
@@ -70,7 +70,10 @@ export const Slider = ({ images }: SliderProperties) => {
       >
         {images.map((slide, index) => {
           return (
-            <ImageListItem key={index} sx={sliderStyles.imageListItem}>
+            <ImageListItem
+              key={index}
+              sx={sliderStyles.imageListItem(isSmallScreen)}
+            >
               <LazyLoadImage
                 src={images[index]}
                 alt="item images"

@@ -34,8 +34,8 @@ export const heroStyles: HeroStyles = {
     }),
   }),
   description: {
-    textAlign: 'center',
+    textAlign: 'justify',
     color: 'text.secondary',
-    width: { sm: '100%', md: '80%' },
+    width: { sm: '100%', md: '100%' },
   },
 };

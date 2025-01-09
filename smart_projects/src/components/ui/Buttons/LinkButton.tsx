@@ -12,20 +12,25 @@ export const LinkButton = ({
   children,
 }: LinkButtonProps) => {
   return (
-    <Link
-      style={{
-        display: 'flex',
-        justifySelf: 'center',
-        marginBottom: 16,
-        backgroundColor: backgoundColor,
-        padding: '8px 16px',
-        borderRadius: 24,
-        color: 'white',
-        textDecoration: 'none',
-      }}
-      to={to}
-    >
-      {children}
-    </Link>
+    <div>
+      <Link
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          justifySelf: 'center',
+          marginBottom: 16,
+          backgroundColor: backgoundColor,
+          padding: '8px 16px',
+          borderRadius: 24,
+          color: 'white',
+          textDecoration: 'none',
+          marginLeft: 32,
+          marginRight: 32,
+        }}
+        to={to}
+      >
+        {children}
+      </Link>
+    </div>
   );
 };
