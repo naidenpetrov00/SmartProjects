@@ -41,14 +41,6 @@ export const createAppRouter = (queryClient: QueryClient) =>
           },
           ErrorBoundary: AppRootErrorBoundary,
         },
-        {
-          path: paths.aboutUs.path,
-          lazy: async () => {
-            const { AboutUsPage } = await import('./pages/AboutUsPage');
-            return { Component: AboutUsPage };
-          },
-          ErrorBoundary: AppRootErrorBoundary,
-        },
       ],
     },
     {

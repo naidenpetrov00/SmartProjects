@@ -12,7 +12,7 @@ import homePhoto from '../../../assets/images/home/homePageBuildings.jpg';
 import homePhotoPlaceHolder from '../../../assets/images/home/homePageBuildingsPlaceHolder10.jpg';
 
 import { homePageStyles } from './HomePage.styles';
-import { AboutUsPage } from '../AboutUsPage';
+import { AboutUsPage } from '../../../components/AboutUs/AboutUs';
 
 const titleWhite = 'Our latest';
 const titleBlack = 'projects';

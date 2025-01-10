@@ -2,7 +2,7 @@ import { Box } from '@mui/material';
 
 import { Footer } from '../../ui/Footer/Footer';
 import { Header } from '../../ui/Header';
-import { ScrollTop } from '../../ui/ScrollTop';
+import { ScrollTop } from '../../ui/Buttons/ScrollTop';
 import { ToolBarOffset } from '../../ui/Offsets';
 
 import { pageLayoutStyles } from './PageLayout.styles';
