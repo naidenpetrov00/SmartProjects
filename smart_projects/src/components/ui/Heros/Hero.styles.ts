@@ -3,8 +3,8 @@ import { SxProps, Theme } from '@mui/material';
 interface HeroStyles {
   container: SxProps<Theme>;
   stack: SxProps<Theme>;
-  title: SxProps<Theme>;
-  titleBlack: (theme: Theme) => SxProps<Theme>;
+  titleWhite: (isSmallScreen: boolean) => SxProps<Theme>;
+  titleBlack: (theme: Theme, isSmallScreen: boolean) => SxProps<Theme>;
   description: SxProps<Theme>;
 }
 
@@ -20,18 +20,20 @@ export const heroStyles: HeroStyles = {
     alignItems: 'center',
     width: { xs: '100%', sm: '70%' },
   },
-  title: {
+  titleWhite: (isSmallScreen) => ({
     display: 'flex',
     flexDirection: { xs: 'column', sm: 'row' },
     alignItems: 'center',
-    fontSize: 'clamp(3rem, 10vw, 3.5rem)',
-  },
-  titleBlack: (theme: Theme) => ({
-    fontSize: 'inherit',
+    fontSize: { xs: '32px', md: '64px' },
+    fontWeight: isSmallScreen ? 'bold' : '',
+  }),
+  titleBlack: (theme, isSmallScreen) => ({
     color: 'primary.main',
     ...theme.applyStyles('dark', {
       color: 'primary.light',
     }),
+    fontSize: { xs: '32px', md: '64px' },
+    fontWeight: isSmallScreen ? 'bold' : '',
   }),
   description: {
     textAlign: 'justify',

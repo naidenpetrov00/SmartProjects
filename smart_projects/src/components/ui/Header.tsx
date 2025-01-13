@@ -1,22 +1,18 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from '@mui/material';
-import ConstructionIcon from '@mui/icons-material/Construction';
+import { AppBar, Toolbar, useMediaQuery, useTheme } from '@mui/material';
 
-import { paths } from '../../config/paths';
 import { NavigationButtons } from './Buttons/NavigationButtons';
 import { DrawerNavigationButtons } from './Buttons/DrawerNavigationButtons/DrawerNavigationButtons';
+
+import { paths } from '../../config/paths';
+import SvgIcon from '../../assets/images/logo/SvgIcon';
 
 export const Header = () => {
   const { pathname } = useLocation();
   const [drawerOpenState, setdrawerOpenState] = useState(false);
+  
   const theme = useTheme();
   const underMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -35,15 +31,13 @@ export const Header = () => {
           className="noStyle"
           to={paths.home.path}
           aria-label={`navigate to ${paths.home.label}`}
-        >
-          <ConstructionIcon fontSize="large" titleAccess="SmartProjects Logo" />
-        </Link>
+        ></Link>
         <Link
           className="noStyle"
           to={paths.home.path}
           aria-label={`Go to ${paths.home.label}`}
         >
-          <Typography variant="h5">SmartProjects</Typography>
+          <SvgIcon width="150" />
         </Link>
         {underMediumScreen ? (
           <DrawerNavigationButtons

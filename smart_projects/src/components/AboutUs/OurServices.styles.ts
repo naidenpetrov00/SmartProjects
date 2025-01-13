@@ -2,6 +2,7 @@ import { SxProps, Theme } from '@mui/material';
 
 interface OurServicesStyles {
   container: SxProps;
+  logoContainer: SxProps;
   accordion: (theme: Theme) => SxProps;
   accordionDetails: (theme: Theme) => SxProps;
 }
@@ -30,4 +31,11 @@ export const ourServicesStyles: OurServicesStyles = {
     flexDirection: 'column',
     gap: 2,
   }),
+  logoContainer: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+    gap: 8,
+  },
 };

@@ -7,12 +7,16 @@ import {
   Typography,
   AccordionDetails,
   useTheme,
+  useMediaQuery,
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import { Hero } from '../ui/Heros/Hero';
+import { AboutUsText } from './AboutUsText';
 
 import { typesOfWork } from '../../config/typesOfWork';
+import { SvgIconWhiteFont } from '../../assets/images/logo/SvgIconWhiteFont';
+
 import { ourServicesStyles } from './OurServices.styles';
 
 const titleWhite = 'Нашите';
@@ -20,16 +24,13 @@ const titleBlack = 'услуги';
 
 export const OurServices = () => {
   const theme = useTheme();
-
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <React.Fragment>
-      <Box
-        sx={{
-          backgroundColor: 'black',
-          width: '200px',
-          height: '200px',
-        }}
-      ></Box>
+      <Box sx={ourServicesStyles.logoContainer}>
+        <SvgIconWhiteFont width={isSmallScreen ? '300' : '600'} />
+        <AboutUsText />
+      </Box>
       <Hero
         titleWhite={titleWhite}
         titleBlack={titleBlack}

@@ -1,9 +1,9 @@
 import { Box } from '@mui/material';
 
-import { Footer } from '../../ui/Footer/Footer';
 import { Header } from '../../ui/Header';
-import { ScrollTop } from '../../ui/Buttons/ScrollTop';
+import { Footer } from '../../ui/Footer/Footer';
 import { ToolBarOffset } from '../../ui/Offsets';
+import { ScrollTop } from '../../ui/Buttons/ScrollTop';
 
 import { pageLayoutStyles } from './PageLayout.styles';
 

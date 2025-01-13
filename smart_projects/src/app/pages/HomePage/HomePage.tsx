@@ -3,7 +3,6 @@ import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Box, Stack } from '@mui/material';
 
 import { AboutUs } from '../../../components/AboutUs/AboutUs';
-import { AboutUsText } from '../../../components/AboutUs/AboutUsText';
 import { PhraseRotator } from '../../../components/ui/Text/PhraseRotator';
 import { OurWorkHomePageImages } from '../../../components/Images/OurWorkHomePageImages';
 
@@ -26,7 +25,6 @@ export const HomePage = () => {
             style={homePageStyles.lazyImage}
           />
           <PhraseRotator />
-          <AboutUsText />
         </Box>
       </Stack>
       <Box component="section">

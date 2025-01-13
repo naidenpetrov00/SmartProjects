@@ -13,6 +13,7 @@ import { socialLinks } from '../../../config/socialLinks';
 import { footerStyles } from './Footer.styles';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { LinkButtonUnderline } from '../Buttons/LinkButtonUnderline';
+import SvgIcon from '../../../assets/images/logo/SvgIcon';
 
 export const Footer = () => {
   const theme = useTheme();
@@ -24,7 +25,7 @@ export const Footer = () => {
         <Box sx={footerStyles.boxContainer} color="primary.contrastText">
           <Box sx={footerStyles.boxContent}>
             <Box sx={{ width: { xs: '100%', sm: '60%' } }}>
-              <Typography variant="h5">SmartProjects</Typography>
+              <SvgIcon width="200" />
               <Typography
                 variant="body2"
                 gutterBottom

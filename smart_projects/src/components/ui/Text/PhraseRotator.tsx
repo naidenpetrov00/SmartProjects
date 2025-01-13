@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 
 import { Typography, useMediaQuery, useTheme } from '@mui/material';
+
 import { phraseRotatorStyles } from './PhraseRotator.styles';
 
 const phrases = [
@@ -13,8 +14,8 @@ const phrases = [
 export const PhraseRotator = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
 
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentPhraseIndex((prevIndex) => (prevIndex + 1) % phrases.length);

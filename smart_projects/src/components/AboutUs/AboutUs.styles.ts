@@ -13,11 +13,8 @@ export const aboutUsStyles: AboutUsStyles = {
   container: { pl: 4, pr: 4 },
   contactsContainer: null,
   aboutUsTextcontainer: (theme) => ({
-    position: 'absolute',
-    bottom: 0,
-    mb: { xs: 2.5, md: 9 },
-    ml: { xs: 2.5, md: 9 },
-    mr: { xs: 2.5, md: 9 },
+    ml: { md: 8 },
+    mr: { md: 8 },
     p: 1.5,
     background: theme.palette.primary.main,
     borderRadius: '16px',

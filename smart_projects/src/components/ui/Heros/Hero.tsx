@@ -1,6 +1,13 @@
 import React from 'react';
 
-import { Container, Stack, Typography, Divider, useTheme } from '@mui/material';
+import {
+  Container,
+  Stack,
+  Typography,
+  Divider,
+  useTheme,
+  useMediaQuery,
+} from '@mui/material';
 
 import { heroStyles } from './Hero.styles';
 
@@ -18,20 +25,22 @@ export const Hero = ({
   divider = true,
 }: HeroProps) => {
   const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   return (
     <React.Fragment>
       <Container sx={heroStyles.container}>
-        <Stack spacing={2} useFlexGap sx={heroStyles.stack} >
-          <Typography variant="h1" sx={heroStyles.title}>
-            {titleWhite}&nbsp;
+        <Stack spacing={2} useFlexGap sx={heroStyles.stack}>
+          <Stack direction="row">
+            <Typography variant="h1" sx={heroStyles.titleWhite(isSmallScreen)}>
+              {titleWhite}&nbsp;
+            </Typography>
             <Typography
-              component="span"
               variant="h1"
-              sx={heroStyles.titleBlack(theme)}
+              sx={heroStyles.titleBlack(theme, isSmallScreen)}
             >
               {titleBlack}
             </Typography>
-          </Typography>
+          </Stack>
           <Typography sx={heroStyles.description}>{description}</Typography>
         </Stack>
       </Container>

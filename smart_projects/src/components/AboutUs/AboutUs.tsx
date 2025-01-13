@@ -9,7 +9,7 @@ import { aboutUsStyles } from './AboutUs.styles';
 
 const titleWhite = 'Свържете се с';
 const titleBlack = 'нас';
-const description = 'Нека създадем заедно вашето мечтано пространство!';
+const description = 'Нека заедно създадем вашето мечтано пространство!';
 
 export const AboutUs = () => {
   const theme = useTheme();
