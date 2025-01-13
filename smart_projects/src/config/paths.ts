@@ -11,8 +11,4 @@ export const paths = {
     label: 'OUR WORK',
     path: '/ourWork',
   },
-  aboutUs: {
-    label: 'ABOUT US',
-    path: '/aboutUs',
-  },
 } as const;

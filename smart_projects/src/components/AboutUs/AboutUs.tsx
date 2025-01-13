@@ -1,21 +1,28 @@
 import { Box, useTheme, Divider } from '@mui/material';
+
 import { Hero } from '../ui/Heros/Hero';
-import { LinkButton } from '../ui/Buttons/LinkButton';
-import { paths } from '../../config/paths';
 import { OurServices } from './OurServices';
+import { LinkButton } from '../ui/Buttons/LinkButton';
+
+import { paths } from '../../config/paths';
+import { aboutUsStyles } from './AboutUs.styles';
+
+const titleWhite = 'Свържете се с';
+const titleBlack = 'нас';
+const description = 'Нека създадем заедно вашето мечтано пространство!';
 
 export const AboutUs = () => {
   const theme = useTheme();
 
   return (
-    <Box sx={{ pl: 4, pr: 4 }}>
-      <OurServices secondary={theme.palette.secondary}></OurServices>
-      <Divider sx={{ mt: 2, width: '100%' }} />
-      <Box sx={{ textAlign: 'center' }}>
+    <Box sx={aboutUsStyles.container}>
+      <OurServices />
+      <Divider sx={aboutUsStyles.divider} />
+      <Box sx={aboutUsStyles.contactsContainer}>
         <Hero
-          titleWhite="Свържете се с"
-          titleBlack="нас"
-          description="Нека създадем заедно вашето мечтано пространство!"
+          titleWhite={titleWhite}
+          titleBlack={titleBlack}
+          description={description}
           divider={false}
         ></Hero>
         <LinkButton
@@ -24,7 +31,7 @@ export const AboutUs = () => {
         >
           CONTACTS
         </LinkButton>
-        <Divider sx={{ mt: 2, width: '100%' }} />
+        <Divider sx={aboutUsStyles.divider} />
       </Box>
     </Box>
   );

@@ -1,4 +1,5 @@
 import { Grid2 as Grid } from '@mui/material';
+
 import { Slider } from './Slider';
 
 interface GetPlaces {
@@ -9,7 +10,7 @@ const places: GetPlaces = {
   Gard: () => {
     //@ts-ignore
     const context = require.context(
-      '../../../../assets/images/places/Gard',
+      '../../../assets/images/places/Gard',
       false,
       /\.(png|jpe?g|svg|webp)$/,
     );
@@ -19,7 +20,7 @@ const places: GetPlaces = {
   Gost: () => {
     //@ts-ignore
     const context = require.context(
-      '../../../../assets/images/places/Gost/',
+      '../../../assets/images/places/Gost/',
       false,
       /\.(png|jpe?g|svg|webp)$/,
     );
@@ -29,7 +30,7 @@ const places: GetPlaces = {
   Gostinyata: () => {
     //@ts-ignore
     const context = require.context(
-      '../../../../assets/images/places/Gostinyata/',
+      '../../../assets/images/places/Gostinyata/',
       false,
       /\.(png|jpe?g|svg|webp)$/,
     );
@@ -39,7 +40,7 @@ const places: GetPlaces = {
   San: () => {
     //@ts-ignore
     const context = require.context(
-      '../../../../assets/images/places/San/',
+      '../../../assets/images/places/San/',
       false,
       /\.(png|jpe?g|svg|webp)$/,
     );
@@ -49,7 +50,7 @@ const places: GetPlaces = {
   Spa: () => {
     //@ts-ignore
     const context = require.context(
-      '../../../../assets/images/places/Spa/',
+      '../../../assets/images/places/Spa/',
       false,
       /\.(png|jpe?g|svg|webp)$/,
     );

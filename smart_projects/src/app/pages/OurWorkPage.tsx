@@ -1,7 +1,7 @@
 import { Box } from '@mui/material';
 
 import { Hero } from '../../components/ui/Heros/Hero';
-import { OurWorkImages } from '../../components/ui/Images/Slider/OurWorkImages';
+import { OurWorkImages } from '../../components/Images/Slider/OurWorkImages';
 
 const titleWhite = 'Our';
 const titleBlack = 'projects';

@@ -4,9 +4,10 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
+import { MainErrorFallback } from '../components/errors/MainErrorFallback';
+
 import { queryConfig } from '../lib/reactQuery';
 import { useCustomTheme } from '../hooks/useCustomTheme';
-import { MainErrorFallback } from '../components/errors/MainErrorFallback';
 
 type AppProviderProps = {
   children: ReactNode;

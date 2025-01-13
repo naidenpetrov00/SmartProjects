@@ -4,7 +4,6 @@ import { AppProvider } from './AppProvider';
 function App() {
   return (
     <AppProvider>
-      
       <AppRouter />
     </AppProvider>
   );
