@@ -9,6 +9,7 @@ import { OurWorkHomePageImages } from '../../../components/Images/OurWorkHomePag
 import { homePageStyles } from './HomePage.styles';
 import homePhoto from '../../../assets/images/home/homePageBuildings.jpg';
 import homePhotoPlaceHolder from '../../../assets/images/home/homePageBuildingsPlaceHolder10.jpg';
+import { LanguageSelector } from '../../../components/ui/Buttons/LanguageSelector';
 
 export const HomePage = () => {
   return (
@@ -26,6 +27,7 @@ export const HomePage = () => {
           />
           <PhraseRotator />
         </Box>
+        <LanguageSelector />
       </Stack>
       <Box component="section">
         <AboutUs />

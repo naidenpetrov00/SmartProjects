@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom';
 
-import { Tabs, Tab } from '@mui/material';
+import {
+  Tabs,
+  Tab,
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+} from '@mui/material';
 
 import { paths } from '../../../config/paths';
 import { drawerNavigationStyles } from './DrawerNavigationButtons/DrawerNavigationButtons.styles';
+import { LanguageSelector } from './LanguageSelector';
 
 type NavigationButtonsProps = {
   pathname: string;

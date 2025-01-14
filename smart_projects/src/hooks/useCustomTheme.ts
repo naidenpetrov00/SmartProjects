@@ -2,10 +2,10 @@ import { useMemo } from 'react';
 
 import { createTheme, Theme } from '@mui/material';
 
-const minCharcoal = '#73787C';
-const minGray = '#C5C6C7';
-const minPaleBlue = '#D7E5F0';
-const minBeige = '#C9AD93';
+// const minCharcoal = '#73787C';
+// const minGray = '#C5C6C7';
+// const minPaleBlue = '#D7E5F0';
+// const minBeige = '#C9AD93';
 const colorPallete = {
   black: '#181C14',
   grey: '#3C3D37',
