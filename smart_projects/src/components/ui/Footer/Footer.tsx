@@ -7,17 +7,20 @@ import Typography from '@mui/material/Typography';
 
 import { Copyright } from '../Copyright';
 
-import { paths } from '../../../config/paths';
 import { socialLinks } from '../../../config/socialLinks';
 
 import { footerStyles } from './Footer.styles';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { LinkButtonUnderline } from '../Buttons/LinkButtonUnderline';
 import SvgIcon from '../../../assets/images/logo/SvgIcon';
+import { usePaths } from '../../../hooks/usePaths';
+import { useTranslation } from 'react-i18next';
 
 export const Footer = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const paths = usePaths();
+  const { t } = useTranslation();
 
   return (
     <Box component={'footer'} sx={footerStyles.footer}>
@@ -31,13 +34,13 @@ export const Footer = () => {
                 gutterBottom
                 sx={{ fontWeight: 600, mt: 3 }}
               >
-                Contacts us.
+                {t('footer.contactUs')}
               </Typography>
               <Typography variant="body2" sx={{ mb: 2 }}>
-                Reach out to schedule a visit. The first step of our work!
+                {t('footer.reachOut')}
               </Typography>
               <Typography variant="body2" sx={{ mb: 1 }}>
-                Email:{' '}
+                {t('common.email')}{' '}
                 <LinkMUI
                   href="mailto:info@smartprojects.com"
                   aria-label="Send email to info@smartprojects.com"
@@ -46,7 +49,7 @@ export const Footer = () => {
                 </LinkMUI>
               </Typography>
               <Typography variant="body2">
-                Phone:{' '}
+                {t('common.phone')}{' '}
                 <LinkMUI
                   href="tel:+123456789"
                   aria-label="Call +359 87 910 9421"
@@ -56,31 +59,12 @@ export const Footer = () => {
               </Typography>
             </Box>
           </Box>
-          <Box sx={footerStyles.boxItems}>
-            <Typography variant="body1" sx={{ fontWeight: 'medium' }}>
-              Product
-            </Typography>
-            <LinkMUI
-              variant="body2"
-              href="#"
-              aria-label="Learn about product pricing"
-            >
-              Pricing
-            </LinkMUI>
-            <LinkMUI
-              variant="body2"
-              href="#"
-              aria-label="Learn from frequently asked questions"
-            >
-              FAQs
-            </LinkMUI>
-          </Box>
           <Box sx={footerStyles.navigation}>
             <Typography
               variant="body1"
               sx={{ fontWeight: 'medium', mt: isSmallScreen ? 3 : 0 }}
             >
-              Navigation
+              {t('footer.navigation')}
             </Typography>
             <Box
               component={'nav'}

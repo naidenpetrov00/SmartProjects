@@ -10,21 +10,23 @@ import { Hero } from '../../../components/ui/Heros/Hero';
 import Timeline from '../../../components/ui/Timeline/Timeline';
 
 import { contactsPageStyles } from './ContactsPage.styles';
+import { useTranslation } from 'react-i18next';
 
 export const ContactsPage = () => {
+  const { t } = useTranslation();
+
   return (
     <React.Fragment>
       <Hero
-        titleWhite="Contact"
-        titleBlack="us"
-        description="Have questions or ready to start your apartment transformation? 
-      Our team is here to provide expert advice, discuss your project, and bring your vision to life."
+        titleWhite={t('titles.contactUs.white').toString()}
+        titleBlack={t('titles.contactUs.black').toString()}
+        description={t('descriptions.contactUs').toString()}
       />
       <Timeline />
       <Box sx={contactsPageStyles.container}>
         <Paper variant="elevation" elevation={24} sx={contactsPageStyles.paper}>
           <Typography variant="h6" gutterBottom>
-            Get in Touch
+            {t('pages.contacts.getInTouch')}
           </Typography>
           <Stack gap={2} sx={contactsPageStyles.stack}>
             <Box sx={contactsPageStyles.contactContainer}>

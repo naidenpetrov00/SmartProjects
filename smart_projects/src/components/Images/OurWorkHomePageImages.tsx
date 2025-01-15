@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { useTheme } from '@mui/material';
 
@@ -8,17 +9,15 @@ import { OurWorkImages } from './Slider/OurWorkImages';
 
 import { paths } from '../../config/paths';
 
-const titleWhite = 'Our latest';
-const titleBlack = 'projects';
-
 export const OurWorkHomePageImages = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <React.Fragment>
       <Hero
-        titleWhite={titleWhite}
-        titleBlack={titleBlack}
+        titleWhite={t('titles.ourWork.white').toString()}
+        titleBlack={t('titles.ourWork.black').toString()}
         divider={false}
       ></Hero>
       <OurWorkImages homePage={true} />
@@ -26,7 +25,7 @@ export const OurWorkHomePageImages = () => {
         backgoundColor={theme.palette.secondary.main}
         to={paths.ourWork.path}
       >
-        CHECK MORE
+        {t('buttons.checkMore')}
       </LinkButton>
     </React.Fragment>
   );

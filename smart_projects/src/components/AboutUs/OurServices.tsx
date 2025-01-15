@@ -14,15 +14,15 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Hero } from '../ui/Heros/Hero';
 import { AboutUsText } from './AboutUsText';
 
-import { typesOfWork } from '../../config/typesOfWork';
 import { SvgIconWhiteFont } from '../../assets/images/logo/SvgIconWhiteFont';
 
 import { ourServicesStyles } from './OurServices.styles';
-
-const titleWhite = 'Нашите';
-const titleBlack = 'услуги';
+import { useTranslation } from 'react-i18next';
+import { useTypesOfWork } from '../../hooks/useTypesOfWork';
 
 export const OurServices = () => {
+  const { t } = useTranslation();
+  const typesOfWork = useTypesOfWork();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   return (
@@ -32,27 +32,30 @@ export const OurServices = () => {
         <AboutUsText />
       </Box>
       <Hero
-        titleWhite={titleWhite}
-        titleBlack={titleBlack}
+        titleWhite={t('titles.ourServices.white').toString()}
+        titleBlack={t('titles.ourServices.black').toString()}
         divider={false}
       ></Hero>
       <Box sx={ourServicesStyles.container}>
-        {typesOfWork.map((service, index) => (
-          <Accordion
-            key={index}
-            defaultExpanded={index === 0}
-            sx={ourServicesStyles.accordion(theme)}
-          >
-            <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography color="textSecondary">{service.title}</Typography>
-            </AccordionSummary>
-            <AccordionDetails sx={ourServicesStyles.accordionDetails(theme)}>
-              {service.details.map((d) => (
-                <Typography color="textSecondary">{d}</Typography>
-              ))}
-            </AccordionDetails>
-          </Accordion>
-        ))}
+        {Object.entries(typesOfWork).map((work, index) => {
+          console.log(index);
+          return (
+            <Accordion
+              key={work[1].title}
+              defaultExpanded={index === 0}
+              sx={ourServicesStyles.accordion(theme)}
+            >
+              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+                <Typography color="textSecondary">{work[1].title}</Typography>
+              </AccordionSummary>
+              <AccordionDetails sx={ourServicesStyles.accordionDetails(theme)}>
+                {work[1].details.map((d) => (
+                  <Typography color="textSecondary">{d}</Typography>
+                ))}
+              </AccordionDetails>
+            </Accordion>
+          );
+        })}
       </Box>
     </React.Fragment>
   );

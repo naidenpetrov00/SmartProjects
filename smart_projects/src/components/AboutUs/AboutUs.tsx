@@ -1,3 +1,5 @@
+import { useTranslation } from 'react-i18next';
+
 import { Box, useTheme, Divider } from '@mui/material';
 
 import { Hero } from '../ui/Heros/Hero';
@@ -7,12 +9,9 @@ import { LinkButton } from '../ui/Buttons/LinkButton';
 import { paths } from '../../config/paths';
 import { aboutUsStyles } from './AboutUs.styles';
 
-const titleWhite = 'Свържете се с';
-const titleBlack = 'нас';
-const description = 'Нека заедно създадем вашето мечтано пространство!';
-
 export const AboutUs = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
 
   return (
     <Box sx={aboutUsStyles.container}>
@@ -20,16 +19,16 @@ export const AboutUs = () => {
       <Divider sx={aboutUsStyles.divider} />
       <Box sx={aboutUsStyles.contactsContainer}>
         <Hero
-          titleWhite={titleWhite}
-          titleBlack={titleBlack}
-          description={description}
+          titleWhite={t('titles.contactUs.white').toString()}
+          titleBlack={t('titles.contactUs.black').toString()}
+          description={t('descriptions.contactUs').toString()}
           divider={false}
         ></Hero>
         <LinkButton
           to={paths.contacts.path}
           backgoundColor={theme.palette.secondary.main}
         >
-          CONTACTS
+          {t('buttons.contacts')}
         </LinkButton>
         <Divider sx={aboutUsStyles.divider} />
       </Box>

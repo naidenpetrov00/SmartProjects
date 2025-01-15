@@ -2,19 +2,15 @@ import { useState, useEffect } from 'react';
 
 import { Typography, useMediaQuery, useTheme } from '@mui/material';
 
-import { phraseRotatorStyles } from './PhraseRotator.styles';
+import { usePhrases } from '../../../hooks/usePhrases';
 
-const phrases = [
-  'Your Partner in Apartment Renovations',
-  'Experts in Home Transformations',
-  'Providing Quality Repairs',
-  'Modern Upgrades for Every Home',
-];
+import { phraseRotatorStyles } from './PhraseRotator.styles';
 
 export const PhraseRotator = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
+  const phrases = usePhrases();
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,7 +18,7 @@ export const PhraseRotator = () => {
     }, 2500);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [phrases.length]);
 
   return (
     <Typography

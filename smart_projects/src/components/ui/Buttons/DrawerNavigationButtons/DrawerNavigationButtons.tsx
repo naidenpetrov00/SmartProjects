@@ -4,9 +4,8 @@ import { Fragment } from 'react/jsx-runtime';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Button, Drawer, Tabs, Tab } from '@mui/material';
 
-import { paths } from '../../../../config/paths';
-
 import { drawerNavigationStyles } from './DrawerNavigationButtons.styles';
+import { usePaths } from '../../../../hooks/usePaths';
 
 type DrawerNavigationButtonsProps = {
   pathname: string;
@@ -19,6 +18,8 @@ export const DrawerNavigationButtons = ({
   drawerOpenState,
   setdrawerOpenState,
 }: DrawerNavigationButtonsProps) => {
+  const paths = usePaths();
+
   return (
     <Fragment>
       <Button

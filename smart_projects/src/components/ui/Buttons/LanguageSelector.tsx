@@ -1,74 +1,85 @@
 import React, { useState } from 'react';
 
-export const LanguageSelector = () => {
-  const [showOptions, setShowOptions] = useState(false);
+import { Box } from '@mui/material';
 
-  const handleCircleClick = () => {
-    setShowOptions((prev) => !prev);
+import { flagOptions, LanguageOption } from '../../../config/flagOptions';
+import { useTranslation } from 'react-i18next';
+
+export const LanguageSelector: React.FC = () => {
+  const [showOptions, setShowOptions] = useState<boolean>(false);
+  const { i18n } = useTranslation();
+  const language =
+    flagOptions.find((o) => o.code === i18n.language) ?? flagOptions[0];
+  const [selectedFlag, setSelectedFlag] = useState<LanguageOption>(language);
+
+  const handleOptionClick = (option: LanguageOption): void => {
+    setSelectedFlag(option);
+    i18n.changeLanguage(option.code);
+    setShowOptions(false);
   };
 
-  const handleOptionClick = (option: any) => {
-    alert(`You selected: ${option}`);
-    setShowOptions(false); // Close options after selection
-  };
+  const unselectedOptions: LanguageOption[] = flagOptions.filter(
+    (option) => option.code !== selectedFlag.code,
+  );
 
   return (
-    <div
-      style={{
+    <Box
+      sx={{
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'end',
-        margin: 16,
         position: 'absolute',
-        top: 60,
-        right: 30,
+        top: 96,
+        right: 32,
       }}
     >
-      {/* Circle Div */}
-      <div
-        onClick={handleCircleClick}
+      <Box
+        onClick={() => setShowOptions((prev) => !prev)}
         style={{
-          width: '30px',
-          height: '30px',
+          width: 40,
+          height: 40,
           borderRadius: '50%',
+          overflow: 'hidden',
           backgroundColor: '#3498db',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
           cursor: 'pointer',
+          border: '2px solid #ddd',
         }}
       >
-        +
-      </div>
+        <img
+          src={selectedFlag.flag}
+          alt={selectedFlag.label}
+          style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+        />
+      </Box>
 
-      {/* Options */}
       {showOptions && (
-        <div style={{ marginTop: '10px', textAlign: 'center' }}>
-          <div
-            onClick={() => handleOptionClick('Option 1')}
-            style={{
-              padding: '5px 10px',
-              backgroundColor: '#2ecc71',
-              borderRadius: '5px',
-              marginBottom: '5px',
-              cursor: 'pointer',
-            }}
-          >
-            Option 1
-          </div>
-          <div
-            onClick={() => handleOptionClick('Option 2')}
-            style={{
-              padding: '5px 10px',
-              backgroundColor: '#e74c3c',
-              borderRadius: '5px',
-              cursor: 'pointer',
-            }}
-          >
-            Option 2
-          </div>
-        </div>
+        <Box style={{ marginTop: 10, textAlign: 'center' }}>
+          {unselectedOptions.map((option) => (
+            <Box
+              key={option.code}
+              onClick={() => handleOptionClick(option)}
+              style={{
+                width: 40,
+                height: 40,
+                borderRadius: '50%',
+                overflow: 'hidden',
+                marginBottom: 10,
+                cursor: 'pointer',
+                border: '2px solid #ddd',
+              }}
+            >
+              <img
+                src={option.flag}
+                alt={option.label}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
+            </Box>
+          ))}
+        </Box>
       )}
-    </div>
+    </Box>
   );
 };

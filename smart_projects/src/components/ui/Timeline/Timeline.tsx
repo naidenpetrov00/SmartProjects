@@ -14,6 +14,7 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 import TroubleshootIcon from '@mui/icons-material/Troubleshoot';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+import { useSteps } from '../../../hooks/useSteps';
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
@@ -97,15 +98,9 @@ function ColorlibStepIcon(props: StepIconProps) {
   );
 }
 
-const steps = [
-  'Ask our AI for information',
-  'Contact us.',
-  'FREE Inspection from our specialist.',
-  'We Give you our offer.',
-  'We start building your dream.',
-];
-
 export default function Timeline() {
+  const steps = useSteps();
+
   return (
     <Box sx={{ mt: 2, ml: 1, mr: 0.5 }}>
       <Stepper
