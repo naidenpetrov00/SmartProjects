@@ -23,6 +23,7 @@ export const ourServicesStyles: OurServicesStyles = {
     borderBottomLeftRadius: 4,
     borderBottomRightRadius: 4,
     boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.8)',
+    // boxShadow: 'inset 0px 0px 5px rgba(0, 0, 0, 0.8)',
   }),
   accordionDetails: (theme) => ({
     backgroundColor: theme.palette.secondary.light,

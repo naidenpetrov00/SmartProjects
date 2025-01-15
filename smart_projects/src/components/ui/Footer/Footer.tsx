@@ -1,8 +1,10 @@
 import Box from '@mui/material/Box';
-import { Link as LinkMUI } from '@mui/material';
+import { Divider, Grid2 as Grid, Link, Link as LinkMUI } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
+import CallIcon from '@mui/icons-material/Call';
+import EmailIcon from '@mui/icons-material/Email';
 import Typography from '@mui/material/Typography';
 
 import { Copyright } from '../Copyright';
@@ -15,6 +17,7 @@ import { LinkButtonUnderline } from '../Buttons/LinkButtonUnderline';
 import SvgIcon from '../../../assets/images/logo/SvgIcon';
 import { usePaths } from '../../../hooks/usePaths';
 import { useTranslation } from 'react-i18next';
+import { contactsPageStyles } from '../../../app/pages/ContactsPage/ContactsPage.styles';
 
 export const Footer = () => {
   const theme = useTheme();
@@ -39,24 +42,67 @@ export const Footer = () => {
               <Typography variant="body2" sx={{ mb: 2 }}>
                 {t('footer.reachOut')}
               </Typography>
-              <Typography variant="body2" sx={{ mb: 1 }}>
-                {t('common.email')}{' '}
-                <LinkMUI
-                  href="mailto:info@smartprojects.com"
-                  aria-label="Send email to info@smartprojects.com"
+              <Grid container spacing={2}>
+                {/* Left side */}
+                <Grid
+                  size={{ xs: 12, sm: 6 }}
+                  sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
                 >
-                  info@smartprojects.com
-                </LinkMUI>
-              </Typography>
-              <Typography variant="body2">
-                {t('common.phone')}{' '}
-                <LinkMUI
-                  href="tel:+123456789"
-                  aria-label="Call +359 87 910 9421"
+                  <Typography variant="body2">
+                    инж. Емануил Виденов – управител
+                  </Typography>
+
+                  <Box sx={contactsPageStyles.contactContainer}>
+                    <EmailIcon />
+                    <Link
+                      href="mailto:e.videnov@smart-projects.bg"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      e.videnov@smart-projects.bg
+                    </Link>
+                  </Box>
+                  <Box sx={contactsPageStyles.contactContainer}>
+                    <CallIcon />
+                    <Link
+                      href="tel:+359883393977"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      +359 883 393 977
+                    </Link>
+                  </Box>
+                  {/* {isSmallScreen && <Divider color="white" />} */}
+                </Grid>
+                <Grid
+                  size={{ xs: 12, sm: 6 }}
+                  sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
                 >
-                  +359 87 910 9421
-                </LinkMUI>
-              </Typography>
+                  <Typography variant="body2">
+                    инж. Сергей Кириленко – главен инженер
+                  </Typography>
+                  <Box sx={contactsPageStyles.contactContainer}>
+                    <EmailIcon />
+                    <Link
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="mailto:s.kyrylenko@smart-projects.bg"
+                    >
+                      s.kyrylenko@smart-projects.bg
+                    </Link>
+                  </Box>
+                  <Box sx={contactsPageStyles.contactContainer}>
+                    <CallIcon />
+                    <Link
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      href="tel:+359886116536"
+                    >
+                      +359 886 116 536
+                    </Link>
+                  </Box>
+                </Grid>
+              </Grid>
             </Box>
           </Box>
           <Box sx={footerStyles.navigation}>
@@ -97,6 +143,8 @@ export const Footer = () => {
           >
             {socialLinks.map(({ href, icon, label }) => (
               <IconButton
+                target="_blank"
+                rel="noopener noreferrer"
                 key={label}
                 size="small"
                 href={href}

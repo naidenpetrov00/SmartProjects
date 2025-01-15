@@ -17,10 +17,10 @@ export const contactsPageStyles: ContactsPageStyles = {
     gap: 1,
   },
   paper: {
-    width: { xs: '80vw', sm: '30vw' },
+    width: { xs: '80vw', sm: '50vw' },
     mt: 4,
     mb: 4,
-    p: 1,
+    p: 2,
     borderRadius: 4,
   },
   stack: {

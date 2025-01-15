@@ -3,6 +3,8 @@ import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { en } from './locals/en';
 import { bg } from './locals/bg';
+import { tr } from './locals/tr';
+import { uk } from './locals/uk';
 
 // the translations
 // (tip move them in a JSON file and import them,
@@ -14,13 +16,19 @@ const resources = {
   bg: {
     translation: bg,
   },
+  uk: {
+    translation: uk,
+  },
+  tr: {
+    translation: tr,
+  },
 };
 
 i18n
   .use(initReactI18next)
   .use(LanguageDetector)
   .init({
-    supportedLngs: ['bg', 'en'],
+    supportedLngs: ['bg', 'en', 'tr', 'uk'],
     debug: true,
     resources,
     fallbackLng: 'en',

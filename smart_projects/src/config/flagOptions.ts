@@ -7,4 +7,6 @@ export interface LanguageOption {
 export const flagOptions: LanguageOption[] = [
   { code: 'bg', flag: 'https://flagcdn.com/w320/bg.png', label: 'Bulgarian' },
   { code: 'en', flag: 'https://flagcdn.com/w320/us.png', label: 'English' },
+  { code: 'uk', flag: 'https://flagcdn.com/w320/ua.png', label: 'Turkish' },
+  { code: 'tr', flag: 'https://flagcdn.com/w320/tr.png', label: 'Turkish' },
 ];
