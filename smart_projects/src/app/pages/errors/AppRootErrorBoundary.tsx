@@ -5,11 +5,18 @@ export const AppRootErrorBoundary = () => {
   const data = JSON.parse(error.data);
 
   return (
-    <div role="alert">
-      <h1>{error.status}</h1>
+    <div role="alert" aria-live="assertive" aria-labelledby="error-message">
+      <h1 id="error-message">{error.status}</h1>
       <h2>{data.sorry}</h2>
       <p>
-        Go ahead and email {data.hrEmail} if you feel like this is a mistake.
+        If you believe this is a mistake, please reach out to{' '}
+        <a
+          href="mailto:e.videnov@smart-projects.bg"
+          aria-label="Email Emanuil Videnov"
+        >
+          e.videnov@smart-projects.bg
+        </a>
+        .
       </p>
     </div>
   );

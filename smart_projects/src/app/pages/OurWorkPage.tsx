@@ -9,12 +9,13 @@ export const OurWorkPage = () => {
   const { t } = useTranslation();
 
   return (
-    <Box component="section">
+    <Box component="section" aria-labelledby="our-work-section">
       <Hero
         titleWhite={t('titles.ourWork.white').toString()}
         titleBlack={t('titles.ourWork.black').toString()}
         description={t('descriptions.ourWork').toString()}
-      ></Hero>
+        aria-labelledby="hero-description"
+      />
       <OurWorkImages />
     </Box>
   );

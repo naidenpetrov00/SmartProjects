@@ -4,10 +4,10 @@ import { useTranslation } from 'react-i18next';
 import { useTheme } from '@mui/material';
 
 import { Hero } from '../ui/Heros/Hero';
-import { LinkButton } from '../ui/Buttons/LinkButton';
 import { OurWorkImages } from './Slider/OurWorkImages';
 
 import { paths } from '../../config/paths';
+import { LinkButton } from '../ui/Buttons/LinkButton/LinkButton';
 
 export const OurWorkHomePageImages = () => {
   const theme = useTheme();
@@ -19,11 +19,13 @@ export const OurWorkHomePageImages = () => {
         titleWhite={t('titles.ourWork.white').toString()}
         titleBlack={t('titles.ourWork.black').toString()}
         divider={false}
-      ></Hero>
+        aria-label={t('titles.ourWork.white')}
+      />
       <OurWorkImages homePage={true} />
       <LinkButton
-        backgoundColor={theme.palette.secondary.main}
+        backgroundColor={theme.palette.secondary.main}
         to={paths.ourWork.path}
+        aria-label={t('buttons.checkMore')}
       >
         {t('buttons.checkMore')}
       </LinkButton>

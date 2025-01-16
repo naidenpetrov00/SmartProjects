@@ -14,7 +14,7 @@ export const AboutUs = () => {
   const { t } = useTranslation();
 
   return (
-    <Box sx={aboutUsStyles.container}>
+    <Box sx={aboutUsStyles.container} aria-labelledby="about-us-section">
       <OurServices />
       <Divider sx={aboutUsStyles.divider} />
       <Box sx={aboutUsStyles.contactsContainer}>
@@ -23,10 +23,12 @@ export const AboutUs = () => {
           titleBlack={t('titles.contactUs.black').toString()}
           description={t('descriptions.contactUs').toString()}
           divider={false}
-        ></Hero>
+          aria-labelledby="hero-contact-description"
+        />
         <LinkButton
           to={paths.contacts.path}
           backgoundColor={theme.palette.secondary.main}
+          aria-label="Go to contacts page"
         >
           {t('buttons.contacts')}
         </LinkButton>

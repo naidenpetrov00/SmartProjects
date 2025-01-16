@@ -8,5 +8,5 @@ export const ScrollToTop = () => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
-  return null;
+  return <div role="presentation" aria-hidden="true" />;
 };

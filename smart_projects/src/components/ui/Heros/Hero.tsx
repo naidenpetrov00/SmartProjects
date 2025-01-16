@@ -34,20 +34,30 @@ export const Hero = ({
             direction={isSmallScreen ? 'column' : 'row'}
             sx={{ textAlign: 'center' }}
           >
-            <Typography variant="h1" sx={heroStyles.titleWhite(isSmallScreen)}>
+            <Typography
+              variant="h1"
+              sx={heroStyles.titleWhite(isSmallScreen)}
+              aria-label="Title in white"
+            >
               {titleWhite}&nbsp;
             </Typography>
             <Typography
               variant="h1"
               sx={heroStyles.titleBlack(theme, isSmallScreen)}
+              aria-label="Title in black"
             >
               {titleBlack}
             </Typography>
           </Stack>
-          <Typography sx={heroStyles.description}>{description}</Typography>
+          <Typography
+            sx={heroStyles.description}
+            aria-describedby="hero-description"
+          >
+            {description}
+          </Typography>
         </Stack>
       </Container>
-      {divider && <Divider></Divider>}
+      {divider && <Divider aria-hidden="true" />}
     </React.Fragment>
   );
 };

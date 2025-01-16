@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import { Divider, Grid2 as Grid, Link, Link as LinkMUI } from '@mui/material';
+import { Divider, Grid2 as Grid, Link } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
@@ -8,12 +8,10 @@ import EmailIcon from '@mui/icons-material/Email';
 import Typography from '@mui/material/Typography';
 
 import { Copyright } from '../Copyright';
-
 import { socialLinks } from '../../../config/socialLinks';
-
 import { footerStyles } from './Footer.styles';
 import { useMediaQuery, useTheme } from '@mui/material';
-import { LinkButtonUnderline } from '../Buttons/LinkButtonUnderline';
+import { LinkButtonUnderline } from '../Buttons/LinkButton/LinkButtonUnderline';
 import SvgIcon from '../../../assets/images/logo/SvgIcon';
 import { usePaths } from '../../../hooks/usePaths';
 import { useTranslation } from 'react-i18next';
@@ -26,7 +24,7 @@ export const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <Box component={'footer'} sx={footerStyles.footer}>
+    <Box component="footer" sx={footerStyles.footer}>
       <Container sx={footerStyles.container}>
         <Box sx={footerStyles.boxContainer} color="primary.contrastText">
           <Box sx={footerStyles.boxContent}>
@@ -51,13 +49,13 @@ export const Footer = () => {
                   <Typography variant="body2">
                     инж. Емануил Виденов – управител
                   </Typography>
-
                   <Box sx={contactsPageStyles.contactContainer}>
                     <EmailIcon />
                     <Link
                       href="mailto:e.videnov@smart-projects.bg"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Email Emanuil Videnov"
                     >
                       e.videnov@smart-projects.bg
                     </Link>
@@ -68,11 +66,11 @@ export const Footer = () => {
                       href="tel:+359883393977"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="Call Emanuil Videnov"
                     >
                       +359 883 393 977
                     </Link>
                   </Box>
-                  {/* {isSmallScreen && <Divider color="white" />} */}
                 </Grid>
                 <Grid
                   size={{ xs: 12, sm: 6 }}
@@ -84,9 +82,10 @@ export const Footer = () => {
                   <Box sx={contactsPageStyles.contactContainer}>
                     <EmailIcon />
                     <Link
+                      href="mailto:s.kyrylenko@smart-projects.bg"
                       target="_blank"
                       rel="noopener noreferrer"
-                      href="mailto:s.kyrylenko@smart-projects.bg"
+                      aria-label="Email Sergey Kyrylenko"
                     >
                       s.kyrylenko@smart-projects.bg
                     </Link>
@@ -94,9 +93,10 @@ export const Footer = () => {
                   <Box sx={contactsPageStyles.contactContainer}>
                     <CallIcon />
                     <Link
+                      href="tel:+359886116536"
                       target="_blank"
                       rel="noopener noreferrer"
-                      href="tel:+359886116536"
+                      aria-label="Call Sergey Kyrylenko"
                     >
                       +359 886 116 536
                     </Link>
@@ -113,7 +113,7 @@ export const Footer = () => {
               {t('footer.navigation')}
             </Typography>
             <Box
-              component={'nav'}
+              component="nav"
               role="navigation"
               sx={{
                 display: 'flex',
@@ -123,7 +123,10 @@ export const Footer = () => {
             >
               {Object.values(paths).map((path, index) => (
                 <div key={index}>
-                  <LinkButtonUnderline key={index} to={path.path}>
+                  <LinkButtonUnderline
+                    to={path.path}
+                    aria-label={`Navigate to ${path.label}`}
+                  >
                     {path.label}
                   </LinkButtonUnderline>
                 </div>

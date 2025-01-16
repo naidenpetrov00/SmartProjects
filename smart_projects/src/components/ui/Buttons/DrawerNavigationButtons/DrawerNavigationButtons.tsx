@@ -42,7 +42,7 @@ export const DrawerNavigationButtons = ({
           value={pathname}
           selectionFollowsFocus
           orientation="vertical"
-          aria-labelledby="drawer page navigation"
+          aria-labelledby="drawer-page-navigation"
         >
           {Object.values(paths).map((path, index) => (
             <Tab

@@ -92,6 +92,8 @@ function ColorlibStepIcon(props: StepIconProps) {
     <ColorlibStepIconRoot
       ownerState={{ completed, active }}
       className={className}
+      role="img"
+      aria-label={`Step ${props.icon}`}
     >
       {icons[String(props.icon)]}
     </ColorlibStepIconRoot>
@@ -107,6 +109,7 @@ export default function Timeline() {
         alternativeLabel
         activeStep={1}
         connector={<ColorlibConnector />}
+        aria-labelledby="stepper-timeline"
       >
         {steps.map((label) => (
           <Step key={label}>

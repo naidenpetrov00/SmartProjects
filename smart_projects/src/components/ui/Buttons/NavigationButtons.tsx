@@ -1,9 +1,6 @@
 import { Link } from 'react-router-dom';
-
 import { Tabs, Tab } from '@mui/material';
-
 import { drawerNavigationStyles } from './DrawerNavigationButtons/DrawerNavigationButtons.styles';
-
 import { usePaths } from '../../../hooks/usePaths';
 
 type NavigationButtonsProps = {
@@ -16,7 +13,7 @@ export const NavigationButtons = ({ pathname }: NavigationButtonsProps) => {
   return (
     <Tabs
       id="navigation-tabs"
-      aria-labelledby="page navigation"
+      aria-labelledby="page-navigation-tabs"
       sx={drawerNavigationStyles.button}
       value={pathname}
       textColor="inherit"
@@ -30,7 +27,7 @@ export const NavigationButtons = ({ pathname }: NavigationButtonsProps) => {
           value={path.path}
           component={Link}
           to={path.path}
-          aria-label={`navigate to ${path.label}`}
+          aria-label={`Navigate to ${path.label} page`}
           aria-controls={`tabpanel-${index}`}
         />
       ))}

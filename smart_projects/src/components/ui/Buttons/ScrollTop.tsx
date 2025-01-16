@@ -1,5 +1,4 @@
 import { useScrollTrigger, Fade, Box, Fab } from '@mui/material';
-
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 
 export const ScrollTop = () => {
@@ -22,7 +21,8 @@ export const ScrollTop = () => {
     <Fade in={trigger}>
       <Box
         onClick={handleClick}
-        role="presentation"
+        role="button"
+        aria-label="Scroll back to top"
         sx={{ position: 'fixed', bottom: 16, right: 16 }}
       >
         <Fab

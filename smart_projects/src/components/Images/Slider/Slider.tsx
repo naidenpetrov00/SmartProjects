@@ -62,7 +62,11 @@ export const Slider = ({ place }: SliderProperties) => {
   const images = place.getImages();
 
   return (
-    <Box sx={sliderStyles.container(isSmallScreen)}>
+    <Box
+      sx={sliderStyles.container(isSmallScreen)}
+      role="region"
+      aria-label="Image slider"
+    >
       <Slide
         {...slideProperties}
         arrows={!detailsShowed}
@@ -75,10 +79,14 @@ export const Slider = ({ place }: SliderProperties) => {
             <ImageListItem
               key={index}
               sx={sliderStyles.imageListItem(isSmallScreen)}
+              role="listitem"
+              aria-label={`Slide ${index + 1}`}
             >
               <LazyLoadImage
                 src={images[index]}
-                alt="item images"
+                alt={`Image of ${place.title} - ${place.subtitle} - Slide ${
+                  index + 1
+                }`}
                 effect="blur"
                 style={{
                   display:

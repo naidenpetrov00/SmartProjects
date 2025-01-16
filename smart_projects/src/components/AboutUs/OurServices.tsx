@@ -25,6 +25,7 @@ export const OurServices = () => {
   const typesOfWork = useTypesOfWork();
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+
   return (
     <React.Fragment>
       <Box sx={ourServicesStyles.logoContainer}>
@@ -35,27 +36,38 @@ export const OurServices = () => {
         titleWhite={t('titles.ourServices.white').toString()}
         titleBlack={t('titles.ourServices.black').toString()}
         divider={false}
-      ></Hero>
-      <Box sx={ourServicesStyles.container}>
-        {Object.entries(typesOfWork).map((work, index) => {
-          console.log(index);
-          return (
-            <Accordion
-              key={work[1].title}
-              defaultExpanded={index === 0}
-              sx={ourServicesStyles.accordion(theme)}
+        aria-labelledby="our-services-hero"
+      />
+      <Box
+        sx={ourServicesStyles.container}
+        role="region"
+        aria-labelledby="our-services-accordion"
+      >
+        {Object.entries(typesOfWork).map((work, index) => (
+          <Accordion
+            key={work[1].title}
+            defaultExpanded={index === 0}
+            sx={ourServicesStyles.accordion(theme)}
+            aria-labelledby={`accordion-${index}`}
+          >
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls={`panel${index}-content`}
+              id={`panel${index}-header`}
             >
-              <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-                <Typography color="textSecondary">{work[1].title}</Typography>
-              </AccordionSummary>
-              <AccordionDetails sx={ourServicesStyles.accordionDetails(theme)}>
-                {work[1].details.map((d) => (
-                  <Typography color="textSecondary">{d}</Typography>
-                ))}
-              </AccordionDetails>
-            </Accordion>
-          );
-        })}
+              <Typography color="textSecondary" variant="h6">
+                {work[1].title}
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails sx={ourServicesStyles.accordionDetails(theme)}>
+              {work[1].details.map((d, detailIndex) => (
+                <Typography key={detailIndex} color="textSecondary">
+                  {d}
+                </Typography>
+              ))}
+            </AccordionDetails>
+          </Accordion>
+        ))}
       </Box>
     </React.Fragment>
   );

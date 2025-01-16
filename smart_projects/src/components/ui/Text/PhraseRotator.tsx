@@ -24,8 +24,13 @@ export const PhraseRotator = () => {
     <Typography
       variant={isSmallScreen ? 'h4' : 'h3'}
       sx={phraseRotatorStyles.phrase}
+      aria-live="polite"
+      aria-atomic="true"
+      aria-labelledby="phrase-rotator"
     >
-      SmartProjects – {phrases[currentPhraseIndex]}
+      <span id="phrase-rotator">
+        SmartProjects – {phrases[currentPhraseIndex]}
+      </span>
     </Typography>
   );
 };

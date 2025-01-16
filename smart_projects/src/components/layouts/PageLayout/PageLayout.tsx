@@ -7,17 +7,17 @@ import { ScrollTop } from '../../ui/Buttons/ScrollTop';
 
 import { pageLayoutStyles } from './PageLayout.styles';
 
-type PageLayoutProprs = {
+type PageLayoutProps = {
   children: React.ReactNode;
 };
 
-export const PageLayout = ({ children }: PageLayoutProprs) => {
+export const PageLayout = ({ children }: PageLayoutProps) => {
   return (
     <Box sx={pageLayoutStyles.container}>
       <Header />
       <ToolBarOffset id="back-to-top-anchor" />
       <Box sx={pageLayoutStyles.content}>
-        <main>{children}</main>
+        <main role="main">{children}</main>
       </Box>
       <ScrollTop />
       <Footer />

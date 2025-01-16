@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { linkButtonStyles } from './LinkButton.styles';
 
 interface LinkButtonUnderlineProps {
   children: React.ReactNode;
@@ -13,12 +14,10 @@ export const LinkButtonUnderline = ({
   return (
     <Link
       to={to}
-      style={{
-        fontSize: 15,
-        textDecoration: 'none',
-      }}
+      style={linkButtonStyles.linkUnderline}
       onMouseOver={(e) => (e.currentTarget.style.textDecoration = 'underline')}
       onMouseOut={(e) => (e.currentTarget.style.textDecoration = 'none')}
+      aria-label={`Navigate to ${children}`}
     >
       {children}
     </Link>

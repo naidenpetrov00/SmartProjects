@@ -35,6 +35,8 @@ export const LanguageSelector: React.FC = () => {
     >
       <Box
         onClick={() => setShowOptions((prev) => !prev)}
+        aria-label={`Change language, current language: ${selectedFlag.label}`}
+        role="button"
         style={{
           width: 40,
           height: 40,
@@ -50,7 +52,7 @@ export const LanguageSelector: React.FC = () => {
       >
         <img
           src={selectedFlag.flag}
-          alt={selectedFlag.label}
+          alt={`Flag of ${selectedFlag.label}`}
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
         />
       </Box>
@@ -61,6 +63,8 @@ export const LanguageSelector: React.FC = () => {
             <Box
               key={option.code}
               onClick={() => handleOptionClick(option)}
+              role="button"
+              aria-label={`Select language: ${option.label}`}
               style={{
                 width: 40,
                 height: 40,
@@ -73,7 +77,7 @@ export const LanguageSelector: React.FC = () => {
             >
               <img
                 src={option.flag}
-                alt={option.label}
+                alt={`Flag of ${option.label}`}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}
               />
             </Box>

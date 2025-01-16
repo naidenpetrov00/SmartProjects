@@ -22,13 +22,15 @@ export const ImageDescription = ({
         <IconButton
           size="large"
           sx={sliderStyles.iconButton}
-          aria-label="Info about Item Images"
+          aria-label={`More information about ${imageTitle}`}
           onClick={() => onShowBtnClick((state) => !state)}
         >
           <InfoIcon sx={sliderStyles.infoIcon} />
         </IconButton>
       }
       sx={sliderStyles.imageItemBar}
+      role="button"
+      aria-label={`Toggle details for ${imageTitle}`}
     />
   );
 };

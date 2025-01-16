@@ -13,26 +13,27 @@ import { LanguageSelector } from '../../../components/ui/Buttons/LanguageSelecto
 
 export const HomePage = () => {
   return (
-    <Box component="main">
+    <Box component="main" aria-labelledby="home-page-main-content">
       <Stack direction={'column'}>
         <Box sx={homePageStyles.container}>
           <LazyLoadImage
             src={homePhoto}
             placeholderSrc={homePhotoPlaceHolder}
-            alt="Home Background"
+            alt="Beautiful city skyline with modern buildings in the background"
             effect="opacity"
             width="100%"
             height="100%"
             style={homePageStyles.lazyImage}
+            aria-describedby="home-page-background-image"
           />
           <PhraseRotator />
         </Box>
-        <LanguageSelector />
+        <LanguageSelector aria-label="Select language" />
       </Stack>
-      <Box component="section">
+      <Box component="section" aria-labelledby="about-us-section">
         <AboutUs />
       </Box>
-      <Box component="section">
+      <Box component="section" aria-labelledby="our-work-section">
         <OurWorkHomePageImages />
       </Box>
     </Box>

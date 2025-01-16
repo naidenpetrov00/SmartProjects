@@ -12,7 +12,7 @@ import SvgIcon from '../../assets/images/logo/SvgIcon';
 export const Header = () => {
   const { pathname } = useLocation();
   const [drawerOpenState, setdrawerOpenState] = useState(false);
-  
+
   const theme = useTheme();
   const underMediumScreen = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -31,22 +31,17 @@ export const Header = () => {
           className="noStyle"
           to={paths.home.path}
           aria-label={`navigate to ${paths.home.label}`}
-        ></Link>
-        <Link
-          className="noStyle"
-          to={paths.home.path}
-          aria-label={`Go to ${paths.home.label}`}
         >
-          <SvgIcon width="150" />
+          <SvgIcon width="150" aria-label="SmartProjects logo" />
         </Link>
         {underMediumScreen ? (
           <DrawerNavigationButtons
             pathname={pathname}
             drawerOpenState={drawerOpenState}
             setdrawerOpenState={setdrawerOpenState}
-          ></DrawerNavigationButtons>
+          />
         ) : (
-          <NavigationButtons pathname={pathname}></NavigationButtons>
+          <NavigationButtons pathname={pathname} />
         )}
       </Toolbar>
     </AppBar>
