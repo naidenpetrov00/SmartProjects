@@ -4,10 +4,14 @@ import { IconButton, Box, Typography } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 
 interface ImageDetailsProps {
+  description: string;
   onCloseBtnClick: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const ImageDetails = ({ onCloseBtnClick }: ImageDetailsProps) => {
+export const ImageDetails = ({
+  description,
+  onCloseBtnClick,
+}: ImageDetailsProps) => {
   return (
     <Box
       sx={{
@@ -36,27 +40,7 @@ export const ImageDetails = ({ onCloseBtnClick }: ImageDetailsProps) => {
           scrollbarWidth: 'none',
         }}
       >
-        <Typography variant="h5">ЧСИ 841 Office</Typography>
-        <Typography variant="subtitle1">Адрес: Vitosha 17</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
-        <Typography variant="subtitle1">Време на издработка: 20 дни</Typography>
+        <Typography variant="subtitle1">{description}</Typography>
       </Box>
       <IconButton
         size="large"

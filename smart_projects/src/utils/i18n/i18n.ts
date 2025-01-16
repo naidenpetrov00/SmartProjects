@@ -5,22 +5,31 @@ import { en } from './locals/en';
 import { bg } from './locals/bg';
 import { tr } from './locals/tr';
 import { uk } from './locals/uk';
+import { ru } from './locals/ru';
+import { enPlaces } from './locals/enPlaces';
+import { bgPlaces } from './locals/bgPlaces';
+import { ruPlaces } from './locals/ruPlaces';
+import { trPlaces } from './locals/trPlaces';
+import { ukPlaces } from './locals/ukPlaces';
 
 // the translations
 // (tip move them in a JSON file and import them,
 // or even better, manage them separated from your code: https://react.i18next.com/guides/multiple-translation-files)
 const resources = {
   en: {
-    translation: en,
+    translation: { ...en, ...enPlaces },
   },
   bg: {
-    translation: bg,
+    translation: { ...bg, ...bgPlaces },
   },
   uk: {
-    translation: uk,
+    translation: { ...uk, ...ukPlaces },
   },
   tr: {
-    translation: tr,
+    translation: { ...tr, ...trPlaces },
+  },
+  ru: {
+    translation: { ...ru, ...ruPlaces },
   },
 };
 
@@ -28,7 +37,7 @@ i18n
   .use(initReactI18next)
   .use(LanguageDetector)
   .init({
-    supportedLngs: ['bg', 'en', 'tr', 'uk'],
+    supportedLngs: ['bg', 'en', 'tr', 'uk', 'ru'],
     debug: true,
     resources,
     fallbackLng: 'en',

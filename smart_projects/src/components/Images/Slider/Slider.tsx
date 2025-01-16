@@ -19,6 +19,7 @@ import { ImageDescription } from '../ImageDescription';
 import './Slider.css';
 import { sliderStyles } from './Slider.styles';
 import 'react-slideshow-image/dist/styles.css';
+import { Place } from '../../../hooks/usePlaces';
 
 const slideProperties = {
   easing: 'ease',
@@ -50,14 +51,15 @@ const slideProperties = {
 } as SlideProps;
 
 interface SliderProperties {
-  images: [string];
+  place: Place;
 }
 
-export const Slider = ({ images }: SliderProperties) => {
+export const Slider = ({ place }: SliderProperties) => {
   const [detailsShowed, setDetailsShowed] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
   const [currentSlide, setCurrentSlide] = useState(0);
+  const images = place.getImages();
 
   return (
     <Box sx={sliderStyles.container(isSmallScreen)}>
@@ -88,14 +90,23 @@ export const Slider = ({ images }: SliderProperties) => {
               />
               <MuiSlide in={detailsShowed}>
                 <div>
-                  <ImageDetails onCloseBtnClick={setDetailsShowed} />
+                  <ImageDetails
+                    onCloseBtnClick={setDetailsShowed}
+                    description={place.description}
+                  />
                 </div>
               </MuiSlide>
             </ImageListItem>
           );
         })}
       </Slide>
-      {!detailsShowed && <ImageDescription onShowBtnClick={setDetailsShowed} />}
+      {!detailsShowed && (
+        <ImageDescription
+          onShowBtnClick={setDetailsShowed}
+          imageTitle={place.title}
+          imageSubTitle={place.subtitle}
+        />
+      )}
     </Box>
   );
 };

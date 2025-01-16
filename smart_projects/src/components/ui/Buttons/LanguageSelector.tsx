@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { Box } from '@mui/material';
 
 import { flagOptions, LanguageOption } from '../../../config/flagOptions';
-import { useTranslation } from 'react-i18next';
 
 export const LanguageSelector: React.FC = () => {
   const [showOptions, setShowOptions] = useState<boolean>(false);

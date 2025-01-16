@@ -30,7 +30,10 @@ export const Hero = ({
     <React.Fragment>
       <Container sx={heroStyles.container}>
         <Stack spacing={2} useFlexGap sx={heroStyles.stack}>
-          <Stack direction="row">
+          <Stack
+            direction={isSmallScreen ? 'column' : 'row'}
+            sx={{ textAlign: 'center' }}
+          >
             <Typography variant="h1" sx={heroStyles.titleWhite(isSmallScreen)}>
               {titleWhite}&nbsp;
             </Typography>

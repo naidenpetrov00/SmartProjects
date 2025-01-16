@@ -4,14 +4,20 @@ import { ImageListItemBar, IconButton } from '@mui/material';
 import { sliderStyles } from './Slider/Slider.styles';
 
 interface ImageDescriptionProps {
+  imageTitle: string;
+  imageSubTitle: string;
   onShowBtnClick: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export const ImageDescription = ({ onShowBtnClick }: ImageDescriptionProps) => {
+export const ImageDescription = ({
+  imageTitle,
+  imageSubTitle,
+  onShowBtnClick,
+}: ImageDescriptionProps) => {
   return (
     <ImageListItemBar
-      title="Title"
-      subtitle="SubTitle"
+      title={imageTitle}
+      subtitle={imageSubTitle}
       actionIcon={
         <IconButton
           size="large"

@@ -1,4 +1,4 @@
-import { SxProps, Theme } from '@mui/material';
+import { darken, SxProps, Theme } from '@mui/material';
 
 interface OurServicesStyles {
   container: SxProps;
@@ -17,7 +17,7 @@ export const ourServicesStyles: OurServicesStyles = {
     marginRight: {
       md: 32,
     },
-    backgroundColor: theme.palette.secondary.main,
+    backgroundColor: darken(theme.palette.text.primary, 0.05),
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4,
     borderBottomLeftRadius: 4,
@@ -26,7 +26,7 @@ export const ourServicesStyles: OurServicesStyles = {
     // boxShadow: 'inset 0px 0px 5px rgba(0, 0, 0, 0.8)',
   }),
   accordionDetails: (theme) => ({
-    backgroundColor: theme.palette.secondary.light,
+    backgroundColor: theme.palette.text.primary,
     borderBottomLeftRadius: 4,
     borderBottomRightRadius: 4,
     display: 'flex',
