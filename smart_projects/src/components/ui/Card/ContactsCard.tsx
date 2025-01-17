@@ -27,8 +27,9 @@ export const ContactsCard = () => {
     <Box sx={contactsCardStyles.container}>
       <Paper variant="elevation" elevation={24} sx={contactsCardStyles.paper}>
         <Typography
-          variant="h6"
+          variant="h3"
           sx={{
+            fontSize: '1.25rem',
             textAlign: 'center',
           }}
           gutterBottom

@@ -19,6 +19,7 @@ export const ContactsPage = () => {
         />
         <link rel="canonical" href="http://localhost:3000/contacts" />
       </Helmet>
+      <h1 style={{ display: 'none' }}>...............................</h1>
       <Hero
         titleWhite={t('titles.contactUs.white').toString()}
         titleBlack={t('titles.contactUs.black').toString()}

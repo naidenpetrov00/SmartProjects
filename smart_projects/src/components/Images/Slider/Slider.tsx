@@ -83,6 +83,10 @@ export const Slider = ({ place }: SliderProperties) => {
               aria-label={`Slide ${index + 1}`}
             >
               <LazyLoadImage
+                title={`place ${place.title}${index}`}
+                loading="eager"
+                width="100%"
+                height="100%"
                 src={images[index]}
                 alt={`Image of ${place.title} - ${place.subtitle} - Slide ${
                   index + 1

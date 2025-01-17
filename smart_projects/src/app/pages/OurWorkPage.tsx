@@ -19,6 +19,7 @@ export const OurWorkPage = () => {
         />
         <link rel="canonical" href="http://localhost:3000/ourWork" />
       </Helmet>
+      <h1 style={{ display: 'none' }}>...............................</h1>
       <Hero
         titleWhite={t('titles.ourWork.white').toString()}
         titleBlack={t('titles.ourWork.black').toString()}
