@@ -1,4 +1,5 @@
 import { ReactNode, useState } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { ErrorBoundary } from 'react-error-boundary';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
@@ -23,8 +24,10 @@ export const AppProvider = ({ children }: AppProviderProps) => {
     <ErrorBoundary FallbackComponent={MainErrorFallback}>
       <QueryClientProvider client={queryClient}>
         <ThemeProvider theme={theme}>
-          <CssBaseline />
-          {children}
+          <HelmetProvider>
+            <CssBaseline />
+            {children}
+          </HelmetProvider>
         </ThemeProvider>
       </QueryClientProvider>
     </ErrorBoundary>

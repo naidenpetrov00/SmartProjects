@@ -14,5 +14,6 @@ export const phraseRotatorStyles: PhraseRotatorStyles = {
     },
     left: '5%',
     textShadow: '2px 2px 5px rgba(0, 0, 0, 1)',
+    fontSize: { xs: '2.13rem', sm: '3rem' },
   },
 };

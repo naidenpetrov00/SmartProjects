@@ -22,7 +22,7 @@ export const PhraseRotator = () => {
 
   return (
     <Typography
-      variant={isSmallScreen ? 'h4' : 'h3'}
+      variant={'h1'}
       sx={phraseRotatorStyles.phrase}
       aria-live="polite"
       aria-atomic="true"

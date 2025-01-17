@@ -1,5 +1,5 @@
 import Box from '@mui/material/Box';
-import { Divider, Grid2 as Grid, Link } from '@mui/material';
+import { Grid2 as Grid, Link } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
@@ -15,7 +15,7 @@ import { LinkButtonUnderline } from '../Buttons/LinkButton/LinkButtonUnderline';
 import SvgIcon from '../../../assets/images/logo/SvgIcon';
 import { usePaths } from '../../../hooks/usePaths';
 import { useTranslation } from 'react-i18next';
-import { contactsPageStyles } from '../../../app/pages/ContactsPage/ContactsPage.styles';
+import { contactsCardStyles } from '../Card/ContactsCard.styles';
 
 export const Footer = () => {
   const theme = useTheme();
@@ -49,7 +49,7 @@ export const Footer = () => {
                   <Typography variant="body2">
                     инж. Емануил Виденов – управител
                   </Typography>
-                  <Box sx={contactsPageStyles.contactContainer}>
+                  <Box sx={contactsCardStyles.contactContainer}>
                     <EmailIcon />
                     <Link
                       href="mailto:e.videnov@smart-projects.bg"
@@ -60,7 +60,7 @@ export const Footer = () => {
                       e.videnov@smart-projects.bg
                     </Link>
                   </Box>
-                  <Box sx={contactsPageStyles.contactContainer}>
+                  <Box sx={contactsCardStyles.contactContainer}>
                     <CallIcon />
                     <Link
                       href="tel:+359883393977"
@@ -79,7 +79,7 @@ export const Footer = () => {
                   <Typography variant="body2">
                     инж. Сергей Кириленко – главен инженер
                   </Typography>
-                  <Box sx={contactsPageStyles.contactContainer}>
+                  <Box sx={contactsCardStyles.contactContainer}>
                     <EmailIcon />
                     <Link
                       href="mailto:s.kyrylenko@smart-projects.bg"
@@ -90,7 +90,7 @@ export const Footer = () => {
                       s.kyrylenko@smart-projects.bg
                     </Link>
                   </Box>
-                  <Box sx={contactsPageStyles.contactContainer}>
+                  <Box sx={contactsCardStyles.contactContainer}>
                     <CallIcon />
                     <Link
                       href="tel:+359886116536"

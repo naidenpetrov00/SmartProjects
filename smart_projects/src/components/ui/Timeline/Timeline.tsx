@@ -14,6 +14,7 @@ import ConstructionIcon from '@mui/icons-material/Construction';
 import TroubleshootIcon from '@mui/icons-material/Troubleshoot';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+
 import { useSteps } from '../../../hooks/useSteps';
 
 const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
@@ -115,7 +116,11 @@ export default function Timeline() {
           <Step key={label}>
             <StepLabel
               StepIconComponent={ColorlibStepIcon}
-              sx={{ borderRadius: 2, borderColor: 'black' }}
+              sx={{
+                borderRadius: 2,
+                borderColor: 'black',
+                '& .MuiStepLabel-label': { color: 'black !important' },
+              }}
             >
               {label}
             </StepLabel>

@@ -26,9 +26,7 @@ export const createAppRouter = (queryClient: QueryClient) =>
         {
           path: paths.contacts.path,
           lazy: async () => {
-            const { ContactsPage } = await import(
-              './pages/ContactsPage/ContactsPage'
-            );
+            const { ContactsPage } = await import('./pages/ContactsPage');
             return { Component: ContactsPage };
           },
           ErrorBoundary: AppRootErrorBoundary,

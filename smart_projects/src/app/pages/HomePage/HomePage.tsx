@@ -10,10 +10,23 @@ import { homePageStyles } from './HomePage.styles';
 import homePhoto from '../../../assets/images/home/homePageBuildings.jpg';
 import homePhotoPlaceHolder from '../../../assets/images/home/homePageBuildingsPlaceHolder10.jpg';
 import { LanguageSelector } from '../../../components/ui/Buttons/LanguageSelector';
+import { Helmet } from 'react-helmet-async';
+import { useTranslation } from 'react-i18next';
 
 export const HomePage = () => {
+  /// TODO: add sitemap
+  const { t } = useTranslation();
+
   return (
     <Box component="main" aria-labelledby="home-page-main-content">
+      <Helmet>
+        <title>{t('metatags.homePage.title')}</title>
+        <meta
+          name="description"
+          content={t('metatags.homePage.description')!}
+        />
+        <link rel="canonical" href="http://localhost:3000/" />
+      </Helmet>
       <Stack direction={'column'}>
         <Box sx={homePageStyles.container}>
           <LazyLoadImage

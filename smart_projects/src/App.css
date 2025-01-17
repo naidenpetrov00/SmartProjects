@@ -1,8 +1,0 @@
-.noStyle {
-  text-decoration: none;
-  color: inherit;
-}
-
-body.prevent-scroll {
-  overflow: hidden;
-}

@@ -1,13 +1,13 @@
 import { SxProps, Theme } from '@mui/material';
 
-interface ContactsPageStyles {
+interface ContactsCardStyles {
   container: SxProps<Theme>;
   contactContainer: SxProps<Theme>;
   paper: SxProps<Theme>;
   stack: SxProps<Theme>;
 }
 
-export const contactsPageStyles: ContactsPageStyles = {
+export const contactsCardStyles: ContactsCardStyles = {
   container: {
     display: 'flex',
     justifyContent: 'center',
