@@ -1,14 +1,12 @@
 import { useState, useEffect } from 'react';
 
-import { Typography, useMediaQuery, useTheme } from '@mui/material';
+import { Typography } from '@mui/material';
 
 import { usePhrases } from '../../../hooks/usePhrases';
 
 import { phraseRotatorStyles } from './PhraseRotator.styles';
 
 export const PhraseRotator = () => {
-  const theme = useTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   const phrases = usePhrases();
   const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
