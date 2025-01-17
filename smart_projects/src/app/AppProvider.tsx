@@ -3,6 +3,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import { ErrorBoundary } from 'react-error-boundary';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Analytics } from '@vercel/analytics/react';
 
 import { CssBaseline, ThemeProvider } from '@mui/material';
 
@@ -29,6 +30,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
             <CssBaseline />
             {children}
             <SpeedInsights />
+            <Analytics />
           </HelmetProvider>
         </ThemeProvider>
       </QueryClientProvider>
