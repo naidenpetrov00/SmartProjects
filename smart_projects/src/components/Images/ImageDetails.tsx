@@ -17,7 +17,13 @@ export const ImageDetails = ({
   return (
     <Box sx={imageDetailsStyles.container}>
       <Box sx={imageDetailsStyles.titleContainer}>
-        <Typography variant="subtitle1">{description}</Typography>
+        <Typography
+          aria-hidden={false}
+          variant="button"
+          sx={{ fontSize: '1rem' }}
+        >
+          {description}
+        </Typography>
       </Box>
       <IconButton
         size="large"

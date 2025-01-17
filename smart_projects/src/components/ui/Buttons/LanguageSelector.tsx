@@ -51,6 +51,10 @@ export const LanguageSelector: React.FC = () => {
         }}
       >
         <img
+          title={`flag of ${selectedFlag.label}`}
+          width="100%"
+          height="auto"
+          loading="eager"
           src={selectedFlag.flag}
           alt={`Flag of ${selectedFlag.label}`}
           style={{ width: '100%', height: '100%', objectFit: 'cover' }}
@@ -76,6 +80,10 @@ export const LanguageSelector: React.FC = () => {
               }}
             >
               <img
+                title={`flag of ${selectedFlag.label}`}
+                width="100%"
+                height="auto"
+                loading="eager"
                 src={option.flag}
                 alt={`Flag of ${option.label}`}
                 style={{ width: '100%', height: '100%', objectFit: 'cover' }}

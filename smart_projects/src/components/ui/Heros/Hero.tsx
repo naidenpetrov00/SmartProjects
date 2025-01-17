@@ -35,14 +35,14 @@ export const Hero = ({
             sx={{ textAlign: 'center' }}
           >
             <Typography
-              variant="h1"
+              variant="h2"
               sx={heroStyles.titleWhite(isSmallScreen)}
               aria-label="Title in white"
             >
               {titleWhite}&nbsp;
             </Typography>
             <Typography
-              variant="h1"
+              variant="h2"
               sx={heroStyles.titleBlack(theme, isSmallScreen)}
               aria-label="Title in black"
             >

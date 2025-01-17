@@ -55,7 +55,11 @@ export const OurServices = () => {
               aria-controls={`panel${index}-content`}
               id={`panel${index}-header`}
             >
-              <Typography color="textSecondary" variant="h6">
+              <Typography
+                color="textSecondary"
+                variant="h4"
+                sx={{ fontSize: '1.25rem' }}
+              >
                 {work[1].title}
               </Typography>
             </AccordionSummary>

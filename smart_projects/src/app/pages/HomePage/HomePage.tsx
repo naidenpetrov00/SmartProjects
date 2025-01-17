@@ -30,7 +30,9 @@ export const HomePage = () => {
       <Stack direction={'column'}>
         <Box sx={homePageStyles.container}>
           <LazyLoadImage
+            title="HomePageBuilings"
             src={homePhoto}
+            loading="eager"
             placeholderSrc={homePhotoPlaceHolder}
             alt="Beautiful city skyline with modern buildings in the background"
             effect="opacity"
