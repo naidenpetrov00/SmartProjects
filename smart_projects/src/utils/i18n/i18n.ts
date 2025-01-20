@@ -43,7 +43,7 @@ i18n
   .use(LanguageDetector)
   .init({
     supportedLngs: ['bg', 'en', 'tr', 'uk', 'ru'],
-    debug: true,
+    debug: false,
     resources,
     fallbackLng: 'en',
     // lng: 'bg', // language to use, more information here: https://www.i18next.com/overview/configuration-options#languages-namespaces-resources
