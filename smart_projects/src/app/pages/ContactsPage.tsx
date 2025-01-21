@@ -17,7 +17,7 @@ export const ContactsPage = () => {
           name="description"
           content={t('metatags.contactsPage.description')!}
         />
-        <link rel="canonical" href="http://localhost:3000/contacts" />
+        <link rel="canonical" href="https://smart-projects.bg/contacts" />
       </Helmet>
       <h1 style={{ display: 'none' }}>...............................</h1>
       <Hero

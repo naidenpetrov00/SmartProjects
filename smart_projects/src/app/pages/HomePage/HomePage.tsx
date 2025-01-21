@@ -25,7 +25,7 @@ export const HomePage = () => {
           name="description"
           content={t('metatags.homePage.description')!}
         />
-        <link rel="canonical" href="http://localhost:3000/" />
+        <link rel="canonical" href="https://smart-projects.bg/" />
       </Helmet>
       <Stack direction={'column'}>
         <Box sx={homePageStyles.container}>

@@ -17,7 +17,7 @@ export const OurWorkPage = () => {
           name="description"
           content={t('metatags.ourWorksPage.description')!}
         />
-        <link rel="canonical" href="http://localhost:3000/ourWork" />
+        <link rel="canonical" href="https://smart-projects.bg/ourWork" />
       </Helmet>
       <h1 style={{ display: 'none' }}>...............................</h1>
       <Hero
