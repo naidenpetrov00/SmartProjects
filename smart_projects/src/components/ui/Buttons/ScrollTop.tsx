@@ -23,7 +23,13 @@ export const ScrollTop = () => {
         onClick={handleClick}
         role="button"
         aria-label="Scroll back to top"
-        sx={{ position: 'fixed', bottom: 16, right: 16 }}
+        sx={{
+          position: 'fixed',
+          bottom: 32,
+          right: 88,
+          // left: '50%',
+          // transform: 'translateX(-50%)',
+        }}
       >
         <Fab
           size="small"

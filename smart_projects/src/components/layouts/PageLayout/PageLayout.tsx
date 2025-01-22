@@ -6,6 +6,7 @@ import { ToolBarOffset } from '../../ui/Offsets';
 import { ScrollTop } from '../../ui/Buttons/ScrollTop';
 
 import { pageLayoutStyles } from './PageLayout.styles';
+import { ChatToggler } from '../../ui/Buttons/ChatToogler';
 
 type PageLayoutProps = {
   children: React.ReactNode;
@@ -20,6 +21,7 @@ export const PageLayout = ({ children }: PageLayoutProps) => {
         <main role="main">{children}</main>
       </Box>
       <ScrollTop />
+      <ChatToggler />
       <Footer />
     </Box>
   );

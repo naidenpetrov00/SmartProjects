@@ -10,7 +10,7 @@ interface OurServicesStyles {
 export const ourServicesStyles: OurServicesStyles = {
   container: { borderBottomLeftRadius: 16 },
   accordion: (theme) => ({
-    mt: 0.5,
+    mt: 1,
     marginLeft: {
       md: 32,
     },
