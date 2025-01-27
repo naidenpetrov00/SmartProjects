@@ -17,16 +17,15 @@ export const ourServicesStyles: OurServicesStyles = {
     marginRight: {
       md: 32,
     },
-    backgroundColor: darken(theme.palette.text.primary, 0.05),
+    backgroundColor: darken(theme.palette.primary.light, 0.1),
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4,
     borderBottomLeftRadius: 4,
     borderBottomRightRadius: 4,
     boxShadow: '0px 0px 5px rgba(0, 0, 0, 0.8)',
-    // boxShadow: 'inset 0px 0px 5px rgba(0, 0, 0, 0.8)',
   }),
   accordionDetails: (theme) => ({
-    backgroundColor: theme.palette.text.primary,
+    backgroundColor: theme.palette.primary.light,
     borderBottomLeftRadius: 4,
     borderBottomRightRadius: 4,
     display: 'flex',

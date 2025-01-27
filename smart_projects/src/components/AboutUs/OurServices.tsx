@@ -51,12 +51,14 @@ export const OurServices = () => {
             aria-labelledby={`accordion-${index}`}
           >
             <AccordionSummary
-              expandIcon={<ExpandMoreIcon />}
+              expandIcon={
+                <ExpandMoreIcon sx={{ color: theme.palette.text.primary }} />
+              }
               aria-controls={`panel${index}-content`}
               id={`panel${index}-header`}
             >
               <Typography
-                color="textSecondary"
+                color="textPrimary"
                 variant="h4"
                 sx={{ fontSize: '1.25rem' }}
               >
@@ -65,7 +67,7 @@ export const OurServices = () => {
             </AccordionSummary>
             <AccordionDetails sx={ourServicesStyles.accordionDetails(theme)}>
               {work[1].details.map((d, detailIndex) => (
-                <Typography key={detailIndex} color="textSecondary">
+                <Typography key={detailIndex} color="textPrimary">
                   {d}
                 </Typography>
               ))}
