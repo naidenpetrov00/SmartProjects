@@ -21,11 +21,12 @@ export const ChatToggler = () => {
   const trigger = useScrollTrigger({ disableHysteresis: true });
   const [showTooltip, setShowTooltip] = useState(true);
   const [showChat, setShowChat] = useState(false);
-  console.log(showChat);
 
   const handleClick = () => {
     // setShowTooltip((state) => !state);
-    setShowChat((state) => !state);
+    if (!showChat) {
+      setShowChat(true);
+    }
   };
 
   return (
@@ -83,3 +84,4 @@ export const ChatToggler = () => {
     </Box>
   );
 };
+
