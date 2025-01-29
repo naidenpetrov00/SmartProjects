@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { createRef, useRef, useState } from 'react';
 import {
   useScrollTrigger,
   Box,
@@ -80,8 +80,10 @@ export const ChatToggler = () => {
       >
         <AssistantIcon color="inherit" />
       </Fab>
-      <Chat showChat={showChat} setShowChat={setShowChat} />
+      <Chat
+        showChat={showChat}
+        setShowChat={setShowChat}
+      />
     </Box>
   );
 };
-

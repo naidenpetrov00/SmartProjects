@@ -15,7 +15,17 @@ import {
 } from '@mui/material';
 import TrapFocus from '@mui/material/Unstable_TrapFocus';
 import CloseIcon from '@mui/icons-material/Close';
-import { Dispatch, SetStateAction, useState } from 'react';
+import {
+  Dispatch,
+  forwardRef,
+  MutableRefObject,
+  SetStateAction,
+  useCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from 'react';
 import {
   ChatContainer,
   MainContainer,
@@ -24,17 +34,30 @@ import {
   MessageInputProps,
   MessageList,
   MessageModel,
+  TypingIndicator,
 } from '@chatscope/chat-ui-kit-react';
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css';
 
 interface ChatProps {
   showChat: boolean;
   setShowChat: Dispatch<SetStateAction<boolean>>;
+  // messageListRef: MutableRefObject<any>;
 }
 
 export const Chat = ({ showChat, setShowChat }: ChatProps) => {
+  const [chatGptIsTyping, setchatGptIsTyping] = useState(false);
   const theme = useTheme();
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
+  const messageListRef = useRef<any>(null);
+
+  const scroll = useCallback(() => {
+    setTimeout(() => {
+      messageListRef.current?.scrollToBottom();
+    }, 200);
+  }, []);
+  if (showChat) {
+    scroll();
+  }
 
   const [messages, setMessages] = useState<MessageModel[]>([
     {
@@ -51,9 +74,18 @@ export const Chat = ({ showChat, setShowChat }: ChatProps) => {
     setShowChat(false);
   };
   const handleSend: MessageInputProps['onSend'] = async (message) => {
-    // const message:MessageModel ={message}
-    // setMessages({});
-    console.log(message);
+    messageListRef.current?.scrollToBottom();
+    console.log(messageListRef.current);
+
+    const messageData: MessageModel = {
+      sender: 'user',
+      direction: 'outgoing',
+      position: 'single',
+      message,
+    };
+    setMessages((state) => [...state, messageData]);
+
+    setchatGptIsTyping(true);
   };
 
   return (
@@ -65,15 +97,29 @@ export const Chat = ({ showChat, setShowChat }: ChatProps) => {
       PaperProps={{ style: { pointerEvents: 'auto' } }}
       TransitionComponent={Zoom}
       open={showChat} // onClose={handleCloseChat}
+      fullScreen={isSmallScreen}
       fullWidth
       maxWidth="sm"
-      sx={{ '& .MuiDialog-paperScrollPaper': { height: 560 } }}
-      fullScreen={isSmallScreen}
+      sx={
+        isSmallScreen
+          ? {
+              // '& .MuiDialog-paperScrollPaper': { height: '90%' },
+            }
+          : {
+              '& .MuiDialog-paperScrollPaper': {
+                width: 400,
+                height: 560,
+                position: 'absolute',
+                right: 0,
+                bottom: 0,
+              },
+            }
+      }
     >
       <AppBar sx={{ position: 'relative' }}>
         <Toolbar>
           <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-            Sound
+            AI Assistant
           </Typography>
           <IconButton
             edge="start"
@@ -85,15 +131,25 @@ export const Chat = ({ showChat, setShowChat }: ChatProps) => {
           </IconButton>
         </Toolbar>
       </AppBar>
-      {/* <DialogTitle>AI Assistant</DialogTitle> */}
       <MainContainer>
         <ChatContainer>
-          <MessageList>
+          <MessageList
+            typingIndicator={
+              chatGptIsTyping ? (
+                <TypingIndicator content="Let me think" />
+              ) : null
+            }
+            ref={messageListRef}
+          >
             {messages.map((message, index) => (
               <Message key={index} model={message} />
             ))}
           </MessageList>
-          <MessageInput placeholder="Type Message Here" onSend={handleSend} />
+          <MessageInput
+            placeholder="Type Message Here"
+            onSend={handleSend}
+            style={{ fontSize: '17px' }}
+          />
         </ChatContainer>
       </MainContainer>
     </Dialog>
