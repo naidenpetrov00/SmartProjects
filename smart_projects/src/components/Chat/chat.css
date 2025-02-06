@@ -1,0 +1,20 @@
+.cs-message__content,
+.cs-message-input__content-editor-wrapper,
+.cs-message-input__content-editor,
+.cs-typing-indicator__dot,
+.ps__thumb-y {
+  background-color: #697565 !important;
+}
+
+.cs-button--send,
+.cs-typing-indicator__text {
+  color: #697565 !important;
+}
+.cs-message__html-content,
+.cs-message-input__content-editor {
+  color: white !important;
+}
+
+.cs-message-input__content-editor[data-placeholder]:empty:before {
+  color: white !important;
+}

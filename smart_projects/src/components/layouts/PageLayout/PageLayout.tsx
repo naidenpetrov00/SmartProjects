@@ -6,7 +6,7 @@ import { ToolBarOffset } from '../../ui/Offsets';
 import { ScrollTop } from '../../ui/Buttons/ScrollTop';
 
 import { pageLayoutStyles } from './PageLayout.styles';
-import { ChatToggler } from '../../ui/Buttons/ChatToogler';
+import { ChatToggler } from '../../ui/Buttons/ChatToogler/ChatToogler';
 
 type PageLayoutProps = {
   children: React.ReactNode;
