@@ -80,7 +80,7 @@ export const LanguageSelector: React.FC = () => {
               }}
             >
               <img
-                title={`flag of ${selectedFlag.label}`}
+                title={`flag of ${option.label}`}
                 width="100%"
                 height="auto"
                 loading="eager"
