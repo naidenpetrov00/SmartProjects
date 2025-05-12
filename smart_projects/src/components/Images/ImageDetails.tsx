@@ -20,7 +20,7 @@ export const ImageDetails = ({
         <Typography
           aria-hidden={false}
           variant="button"
-          sx={{ fontSize: '1rem' }}
+          sx={{ fontSize: '1rem', whiteSpace: 'pre-line' }}
         >
           {description}
         </Typography>

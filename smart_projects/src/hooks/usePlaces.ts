@@ -12,11 +12,27 @@ interface PlacesFolder {
   [key: string]: Place;
 }
 
+
 export const usePlaces = () => {
   const { t, i18n } = useTranslation();
 
   const data: PlacesFolder = useMemo(
     () => ({
+      NedelchoApart: {
+        getImages: () => {
+          //@ts-ignore
+          const context = require.context(
+            '../assets/images/places/NedelchoApart',
+            false,
+           /\.(png|jpe?g|svg|webp)$/
+          );
+          const images = context.keys().map(context);
+          return images;
+        },
+        title: t('places.NedelchoApart.title'),
+        subtitle: t('places.NedelchoApart.subtitle'),
+        description: t('places.NedelchoApart.description'),
+      },
       Gard: {
         getImages: () => {
           //@ts-ignore
