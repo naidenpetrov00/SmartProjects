@@ -1,5 +1,15 @@
 export const trPlaces = {
   places: {
+    NedelchoApart: {
+      title: 'Sofya',
+      subtitle: 'İki odalı daire, ideal merkez',
+      description: `- Yenileyici tadilat
+                - Duvar ve tavanların sıvanması
+                - Duvar ve tavanların boyanması
+                - Dekoratif sıva
+                - Süpürgelik montajı
+                - Mutfak tezgahlarının değiştirilmesi`,
+    },
     Gard: {
       title: 'Sofya',
       subtitle: 'İki Yatak Odası',
