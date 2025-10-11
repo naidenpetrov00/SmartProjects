@@ -1,5 +1,3 @@
-import { useTranslation } from 'react-i18next';
-
 import {
   Box,
   Divider,
@@ -15,8 +13,8 @@ import {
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
 import InstagramIcon from '@mui/icons-material/Instagram';
-
 import { contactsCardStyles } from './ContactsCard.styles';
+import { useTranslation } from 'react-i18next';
 
 export const ContactsCard = () => {
   const { t } = useTranslation();
@@ -128,7 +126,7 @@ export const ContactsCard = () => {
             </Grid>
           </Grid>
           <Divider color="white" />
-          <Box
+          {/* <Box
             sx={contactsCardStyles.contactContainer}
             aria-labelledby="social-media-contact"
           >
@@ -141,7 +139,7 @@ export const ContactsCard = () => {
             >
               @smartprojects
             </Link>
-          </Box>
+          </Box> */}
         </Stack>
       </Paper>
     </Box>
