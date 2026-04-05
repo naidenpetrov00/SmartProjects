@@ -10,6 +10,20 @@ export const enPlaces = {
                 - Installation of floor skirting boards
                 - Replacement of kitchen countertops`,
     },
+    2024002: {
+      title: 'Office and installation base',
+      subtitle: 'Hadzhi Dimitar residential district, Sofia',
+      description: `Smart Projects Ltd. carried out a complete renovation of semi-industrial premises with a total area of 120 sq.m.
+      
+      The completed works include:
+       - removal of damaged existing plaster
+       - construction of new drywall walls
+       - full skimming and painting of walls and ceilings
+       - installation of laminate and tile flooring
+       - installation of interior doors
+       - adjustments to plumbing and electrical installations and fitting new lighting fixtures
+       - switches and sockets`,
+    },
     Gard: {
       title: 'Sofia',
       subtitle: 'Two Bedrooms',

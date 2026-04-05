@@ -81,49 +81,7 @@ export const ContactsCard = () => {
               </Box>
               {isSmallScreen && <Divider color="white" />}
             </Grid>
-            <Grid
-              size={{
-                xs: 12,
-                sm: 6,
-              }}
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                gap: 2,
-              }}
-            >
-              <Typography variant="body1" aria-labelledby="engineer-name">
-                инж. Сергей Кириленко – главен инженер
-              </Typography>
-              <Box
-                sx={contactsCardStyles.contactContainer}
-                aria-labelledby="email-contact"
-              >
-                <EmailIcon />
-                <Link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="mailto:s.kyrylenko@smart-projects.bg"
-                  aria-label="Email инж. Сергей Кириленко"
-                >
-                  s.kyrylenko@smart-projects.bg
-                </Link>
-              </Box>
-              <Box
-                sx={contactsCardStyles.contactContainer}
-                aria-labelledby="phone-contact"
-              >
-                <CallIcon />
-                <Link
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="tel:+359886116536"
-                  aria-label="Call инж. Сергей Кириленко"
-                >
-                  +359 886 116 536
-                </Link>
-              </Box>
-            </Grid>
+           
           </Grid>
           <Divider color="white" />
           {/* <Box

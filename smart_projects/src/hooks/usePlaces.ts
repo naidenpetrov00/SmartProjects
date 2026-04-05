@@ -1,5 +1,5 @@
-import { useTranslation } from 'react-i18next';
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export interface Place {
   getImages: () => string[];
@@ -12,7 +12,6 @@ interface PlacesFolder {
   [key: string]: Place;
 }
 
-
 export const usePlaces = () => {
   const { t, i18n } = useTranslation();
 
@@ -24,7 +23,7 @@ export const usePlaces = () => {
           const context = require.context(
             '../assets/images/places/NedelchoApart',
             false,
-           /\.(png|jpe?g|svg|webp)$/
+            /\.(png|jpe?g|svg|webp)$/,
           );
           const images = context.keys().map(context);
           return images;
@@ -33,65 +32,20 @@ export const usePlaces = () => {
         subtitle: t('places.NedelchoApart.subtitle'),
         description: t('places.NedelchoApart.description'),
       },
-      Gard: {
+      2024002: {
         getImages: () => {
           //@ts-ignore
           const context = require.context(
-            '../assets/images/places/Gard',
+            '../assets/images/places/2024002',
             false,
             /\.(png|jpe?g|svg|webp)$/,
           );
           const images = context.keys().map(context);
           return images;
         },
-        title: t('places.Gard.title'),
-        subtitle: t('places.Gard.subtitle'),
-        description: t('places.Gard.description'),
-      },
-      Gost: {
-        getImages: () => {
-          //@ts-ignore
-          const context = require.context(
-            '../assets/images/places/Gost',
-            false,
-            /\.(png|jpe?g|svg|webp)$/,
-          );
-          const images = context.keys().map(context);
-          return images;
-        },
-        title: t('places.Gost.title'),
-        subtitle: t('places.Gost.subtitle'),
-        description: t('places.Gost.description'),
-      },
-      Gostinyata: {
-        getImages: () => {
-          //@ts-ignore
-          const context = require.context(
-            '../assets/images/places/Gostinyata',
-            false,
-            /\.(png|jpe?g|svg|webp)$/,
-          );
-          const images = context.keys().map(context);
-          return images;
-        },
-        title: t('places.Gostinyata.title'),
-        subtitle: t('places.Gostinyata.subtitle'),
-        description: t('places.Gostinyata.description'),
-      },
-      Spa: {
-        getImages: () => {
-          //@ts-ignore
-          const context = require.context(
-            '../assets/images/places/Spa',
-            false,
-            /\.(png|jpe?g|svg|webp)$/,
-          );
-          const images = context.keys().map(context);
-          return images;
-        },
-        title: t('places.Spa.title'),
-        subtitle: t('places.Spa.subtitle'),
-        description: t('places.Spa.description'),
+        title: t('places.2024002.title'),
+        subtitle: t('places.2024002.subtitle'),
+        description: t('places.2024002.description'),
       },
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
