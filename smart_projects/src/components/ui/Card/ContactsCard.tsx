@@ -12,8 +12,6 @@ import {
 
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import { contactsCardStyles } from './ContactsCard.styles';
 import { useTranslation } from 'react-i18next';
 
 export const ContactsCard = () => {
