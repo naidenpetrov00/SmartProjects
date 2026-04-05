@@ -37,6 +37,22 @@ export const enPlaces = {
 - installation of clinker flooring on the veranda and staircase - 28 sq.m.
 - installation of granite tile flooring in the house - 80 sq.m.`,
     },
+    2025012: {
+      title: 'New-build apartment, SoHome',
+      subtitle: 'SoHome Complex, Vitosha district, Sofia',
+      description: `Smart Projects Ltd. undertook the complete execution of the finishing works in this new 90 sq.m. apartment. The works were carried out according to the client’s design.
+
+      The works include:
+- reconfiguration of the rooms, including demolition of existing partition walls and construction of new ones
+- complete reworking of the electrical and plumbing installations
+- full skimming and painting of walls and ceilings
+- installation of suspended plasterboard ceilings and cornices for concealed linear lighting
+- installation of decorative friezes, wall mouldings, and paneling
+- wallpaper installation
+- installation of granite tile and laminate flooring
+- construction of two bathrooms with a complex interior including tiles sized 6 x 27 cm
+- installation of doors, lighting fixtures, switches and sockets, radiators, and furniture`,
+    },
     Gard: {
       title: 'Sofia',
       subtitle: 'Two Bedrooms',

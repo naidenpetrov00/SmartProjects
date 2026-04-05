@@ -37,6 +37,22 @@ export const trPlaces = {
 - verandada ve merdivende klinker zemin döşemesi - 28 m2
 - ev içinde granit seramik zemin döşemesi - 80 m2`,
     },
+    2025012: {
+      title: 'Yeni yapı daire, SoHome',
+      subtitle: 'SoHome Kompleksi, Vitosha bölgesi, Sofya',
+      description: `Smart Projects Ltd., 90 m2 büyüklüğündeki bu yeni dairede tüm ince işlerin tamamını üstlendi. Çalışmalar müşterinin projesine göre gerçekleştirildi.
+
+      Yapılan işler şunları içerir:
+- mevcut bölme duvarların yıkılması ve yenilerinin inşa edilmesi dahil mekanların yeniden düzenlenmesi
+- elektrik ve sıhhi tesisat sistemlerinin tamamen yeniden yapılması
+- duvar ve tavanların tamamen macunlanması ve boyanması
+- gizli lineer aydınlatma için alçıpan asma tavanlar ve pervazların montajı
+- dekoratif frizler, duvar pervazları ve lambri montajı
+- duvar kağıdı uygulaması
+- granit seramik ve laminat parke zemin döşemesi
+- 6 x 27 cm ölçülerinde fayanslar içeren karmaşık iç tasarıma sahip iki banyonun yapımı
+- kapılar, aydınlatma armatürleri, anahtarlar ve prizler, radyatörler ve mobilyaların montajı`,
+    },
     Gard: {
       title: 'Sofya',
       subtitle: 'İki Yatak Odası',
