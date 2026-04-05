@@ -1,21 +1,21 @@
-import Box from '@mui/material/Box';
 import { Grid2 as Grid, Link } from '@mui/material';
-import Stack from '@mui/material/Stack';
-import Container from '@mui/material/Container';
-import IconButton from '@mui/material/IconButton';
-import CallIcon from '@mui/icons-material/Call';
-import EmailIcon from '@mui/icons-material/Email';
-import Typography from '@mui/material/Typography';
-
-import { Copyright } from '../Copyright';
-import { socialLinks } from '../../../config/socialLinks';
-import { footerStyles } from './Footer.styles';
 import { useMediaQuery, useTheme } from '@mui/material';
+
+import Box from '@mui/material/Box';
+import CallIcon from '@mui/icons-material/Call';
+import Container from '@mui/material/Container';
+import { Copyright } from '../Copyright';
+import EmailIcon from '@mui/icons-material/Email';
+import IconButton from '@mui/material/IconButton';
 import { LinkButtonUnderline } from '../Buttons/LinkButton/LinkButtonUnderline';
+import Stack from '@mui/material/Stack';
 import SvgIcon from '../../../assets/images/logo/SvgIcon';
+import Typography from '@mui/material/Typography';
+import { contactsCardStyles } from '../Card/ContactsCard.styles';
+import { footerStyles } from './Footer.styles';
+import { socialLinks } from '../../../config/socialLinks';
 import { usePaths } from '../../../hooks/usePaths';
 import { useTranslation } from 'react-i18next';
-import { contactsCardStyles } from '../Card/ContactsCard.styles';
 
 export const Footer = () => {
   const theme = useTheme();
@@ -72,12 +72,12 @@ export const Footer = () => {
                     </Link>
                   </Box>
                 </Grid>
-                <Grid
+                {/* <Grid
                   size={{ xs: 12, sm: 6 }}
                   sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
                 >
                   <Typography variant="body2">
-                    инж. Сергей Кириленко – главен инженер
+                    инж. Сергей Кириленко – Ръководител проекти
                   </Typography>
                   <Box sx={contactsCardStyles.contactContainer}>
                     <EmailIcon />
@@ -101,7 +101,7 @@ export const Footer = () => {
                       +359 886 116 536
                     </Link>
                   </Box>
-                </Grid>
+                </Grid> */}
               </Grid>
             </Box>
           </Box>
