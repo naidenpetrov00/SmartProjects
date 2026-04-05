@@ -62,6 +62,20 @@ export const trPlaces = {
  - istinat duvarlarının, çevre duvarlarının ve merdiven yanlarının doğal taş ile kaplanması
  - tamamlanan işler 100'den fazla basamak ile 80 m2 yürüyüş yolu ve duvar kaplamasını kapsamaktadır.`,
     },
+    2025021: {
+      title: 'Ofis, Krastova Vada bölgesi',
+      subtitle: 'Krastova Vada bölgesi, Sofya',
+      description: `Smart Projects Ltd., 100 m2 büyüklüğündeki bir ofisin tüm ince işlerini üstlendi.
+
+      Yapılan işler şunları içerir:
+- alçıpan bölme duvarların inşa edilmesi
+- elektrik tesisatının kısmen yeniden yapılması ve zayıf akım ağının çekilmesi
+- duvarların tamamen macunlanması ve boyanması
+- asma raster tavan ve gömme aydınlatma montajı
+- granit seramik zemin döşemesi
+- iki banyoda tam kapsamlı inşaat ve montaj işleri
+- banyolarda aydınlatma armatürleri, anahtarlar ve prizler ile sıhhi ekipman montajı`,
+    },
     Gard: {
       title: 'Sofya',
       subtitle: 'İki Yatak Odası',

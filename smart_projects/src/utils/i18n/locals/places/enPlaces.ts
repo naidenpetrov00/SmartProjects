@@ -62,6 +62,20 @@ The completed works include:
  - cladding retaining walls, boundary walls, and the sides of staircases with natural stone
  - the completed work includes more than 100 steps and 80 sq.m. of pathways and walls.`,
     },
+    2025021: {
+      title: 'Office, Krastova Vada district',
+      subtitle: 'Krastova Vada district, Sofia',
+      description: `Smart Projects Ltd. undertook the complete execution of the finishing works for an office with an area of 100 sq.m.
+
+      The works include:
+- construction of plasterboard partition walls
+- partial reworking of the electrical installation and installation of a low-voltage network
+- full skimming and painting of walls
+- installation of a suspended grid ceiling and built-in lighting
+- installation of granite tile flooring
+- full range of construction and installation works in two bathrooms
+- installation of lighting fixtures, switches and sockets, and sanitary equipment in the bathrooms`,
+    },
     Gard: {
       title: 'Sofia',
       subtitle: 'Two Bedrooms',
