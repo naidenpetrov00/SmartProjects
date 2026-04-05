@@ -76,6 +76,21 @@ The completed works include:
 - full range of construction and installation works in two bathrooms
 - installation of lighting fixtures, switches and sockets, and sanitary equipment in the bathrooms`,
     },
+    2025024: {
+      title: 'Old-build apartment, Vitoshka',
+      subtitle: 'Vitosha Boulevard, Sofia',
+      description: `Smart Projects Ltd. undertook the complete execution of the finishing works in this apartment in the very center of Sofia, located in a building from the 1960s.
+The property has an area of 53 sq.m.
+
+The completed works include:
+- complete reworking of the plumbing installation in the kitchen and bathroom
+- full skimming and painting of walls and ceilings
+- application of a leveling screed for subsequent installation of laminate flooring
+- all construction and installation works in the bathroom
+- renovation of the terrace facade
+- construction of a parapet and decking flooring
+- supply and installation of a boiler, sanitary equipment, and radiators`,
+    },
     Gard: {
       title: 'Sofia',
       subtitle: 'Two Bedrooms',

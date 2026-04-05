@@ -76,6 +76,21 @@ export const trPlaces = {
 - iki banyoda tam kapsamlı inşaat ve montaj işleri
 - banyolarda aydınlatma armatürleri, anahtarlar ve prizler ile sıhhi ekipman montajı`,
     },
+    2025024: {
+      title: 'Eski yapım daire, Vitoshka',
+      subtitle: 'Vitosha Bulvarı, Sofya',
+      description: `Smart Projects Ltd., Sofya şehir merkezinde, 1960'lı yıllardan kalma bir binada bulunan bu dairede tüm ince işlerin tamamını üstlendi.
+Mülkün alanı 53 m2'dir.
+
+      Yapılan işler şunları içerir:
+- mutfak ve banyodaki sıhhi tesisatın tamamen yeniden yapılması
+- duvar ve tavanların tamamen macunlanması ve boyanması
+- daha sonra laminat parke döşenmesi için tesviye şapı uygulanması
+- banyodaki tüm inşaat ve montaj işleri
+- teras cephesinin yenilenmesi
+- parapet ve decking zemin kaplamasının yapılması
+- termosifon, sıhhi ekipman ve radyatörlerin temini ve montajı`,
+    },
     Gard: {
       title: 'Sofya',
       subtitle: 'İki Yatak Odası',
