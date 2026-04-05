@@ -121,6 +121,21 @@ export const usePlaces = () => {
         title: t('places.2025024.title'),
         subtitle: t('places.2025024.subtitle'),
         description: t('places.2025024.description'),
+      },
+      20250481: {
+        getImages: () => {
+          //@ts-ignore
+          const context = require.context(
+            '../assets/images/places/20250481',
+            false,
+            /\.(png|jpe?g|svg|webp)$/,
+          );
+          const images = context.keys().map(context);
+          return images;
+        },
+        title: t('places.20250481.title'),
+        subtitle: t('places.20250481.subtitle'),
+        description: t('places.20250481.description'),
       }
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps

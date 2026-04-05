@@ -91,6 +91,23 @@ The completed works include:
 - construction of a parapet and decking flooring
 - supply and installation of a boiler, sanitary equipment, and radiators`,
     },
+    20250481: {
+      title: 'New-build apartment, Simeonovo Ski',
+      subtitle: 'Harmony Simeonovo Complex, Simeonovo district, Sofia',
+      description: `Smart Projects Ltd. undertook the complete execution of the finishing works in this new 70 sq.m. apartment. All design decisions were made by us.
+
+The works include:
+- partial reworking of the electrical and plumbing installations
+- full skimming and painting of walls and ceilings
+- installation of a plasterboard cornice for concealed lighting and a boxed structure with built-in shelves in the living room
+- installation of granite tile and laminate flooring
+- installation of MDF skirting boards
+- all construction and installation works in the bathroom
+- installation of
+- supply and installation of air conditioners
+- supply and installation of doors
+- installation of lighting fixtures, switches and sockets`,
+    },
     Gard: {
       title: 'Sofia',
       subtitle: 'Two Bedrooms',

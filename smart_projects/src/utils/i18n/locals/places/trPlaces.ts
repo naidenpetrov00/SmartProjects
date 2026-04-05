@@ -91,6 +91,23 @@ Mülkün alanı 53 m2'dir.
 - parapet ve decking zemin kaplamasının yapılması
 - termosifon, sıhhi ekipman ve radyatörlerin temini ve montajı`,
     },
+    20250481: {
+      title: 'Yeni yapı daire, Simeonovo Ski',
+      subtitle: 'Harmony Simeonovo Kompleksi, Simeonovo bölgesi, Sofya',
+      description: `Smart Projects Ltd., 70 m2 büyüklüğündeki bu yeni dairede tüm ince işlerin tamamını üstlendi. Tüm proje kararları tarafımızdan alındı.
+
+Yapılan işler şunları içerir:
+- elektrik ve sıhhi tesisat sistemlerinin kısmen yeniden yapılması
+- duvar ve tavanların tamamen macunlanması ve boyanması
+- gizli aydınlatma için alçıpan pervaz ve oturma odasında gömme raflı bir kutu yapının montajı
+- granit seramik ve laminat parke zemin döşemesi
+- MDF süpürgelik montajı
+- banyodaki tüm inşaat ve montaj işleri
+- döşenmesi
+- klimaların temini ve montajı
+- kapıların temini ve montajı
+- aydınlatma armatürleri, anahtarlar ve prizlerin montajı`,
+    },
     Gard: {
       title: 'Sofya',
       subtitle: 'İki Yatak Odası',
