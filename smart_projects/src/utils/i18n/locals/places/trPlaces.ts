@@ -24,6 +24,19 @@ export const trPlaces = {
        - sıhhi tesisat ve elektrik tesisatında düzenlemeler ve yeni aydınlatma armatürlerinin montajı
        - anahtarlar ve prizler`,
     },
+    2024003: {
+      title: 'Özel ev, Prolesha',
+      subtitle: 'Prolesha köyü, Sofya bölgesi',
+      description: `Smart Projects Ltd., cephede traverten kaplama ve granit seramik zemin döşeme işleri gerçekleştirdi.
+
+      Yapılan işler şunları içerir:
+- traverten cephe kaplaması için sağlam bir zemin oluşturmak amacıyla XPS yalıtım üzerine takviyeli kaba sıvanın tamamen uygulanması
+- cepheye traverten uygulaması - 130 m2
+- cephe sıvası uygulanmadan önce hazırlık işleri - pencere dönüşleri, duvarların kısmi macunlanması
+- cephe sıvası uygulaması - 50 m2
+- verandada ve merdivende klinker zemin döşemesi - 28 m2
+- ev içinde granit seramik zemin döşemesi - 80 m2`,
+    },
     Gard: {
       title: 'Sofya',
       subtitle: 'İki Yatak Odası',

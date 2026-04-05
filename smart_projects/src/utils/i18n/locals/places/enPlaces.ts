@@ -24,6 +24,19 @@ export const enPlaces = {
        - adjustments to plumbing and electrical installations and fitting new lighting fixtures
        - switches and sockets`,
     },
+    2024003: {
+      title: 'Private house, Prolesha',
+      subtitle: 'Prolesha village, Sofia region',
+      description: `Smart Projects Ltd. carried out travertine facade cladding installation and granite tile flooring works.
+
+      The works include:
+- complete application of reinforced base plaster over XPS insulation to create a solid base for the travertine facade cladding
+- installation of travertine on the facade - 130 sq.m.
+- preparatory facade works before applying facade render - window reveals, partial wall skimming
+- application of facade render - 50 sq.m.
+- installation of clinker flooring on the veranda and staircase - 28 sq.m.
+- installation of granite tile flooring in the house - 80 sq.m.`,
+    },
     Gard: {
       title: 'Sofia',
       subtitle: 'Two Bedrooms',
