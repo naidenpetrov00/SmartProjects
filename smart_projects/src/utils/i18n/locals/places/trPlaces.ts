@@ -53,6 +53,15 @@ export const trPlaces = {
 - 6 x 27 cm ölçülerinde fayanslar içeren karmaşık iç tasarıma sahip iki banyonun yapımı
 - kapılar, aydınlatma armatürleri, anahtarlar ve prizler, radyatörler ve mobilyaların montajı`,
     },
+    2025015: {
+      title: 'Özel ev, Pancharevo bölgesi',
+      subtitle: 'Pancharevo bölgesi, Sofya',
+      description: `Smart Projects Ltd., merdivenler ve yürüyüş yollarında, karmaşık geometrik şekillere sahip alanlar dahil olmak üzere doğal Bulgar taşı döşeme işlerini üstlendi.
+       
+      Yapılan işler şunları içerir:
+ - istinat duvarlarının, çevre duvarlarının ve merdiven yanlarının doğal taş ile kaplanması
+ - tamamlanan işler 100'den fazla basamak ile 80 m2 yürüyüş yolu ve duvar kaplamasını kapsamaktadır.`,
+    },
     Gard: {
       title: 'Sofya',
       subtitle: 'İki Yatak Odası',

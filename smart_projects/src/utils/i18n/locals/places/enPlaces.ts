@@ -53,6 +53,15 @@ export const enPlaces = {
 - construction of two bathrooms with a complex interior including tiles sized 6 x 27 cm
 - installation of doors, lighting fixtures, switches and sockets, radiators, and furniture`,
     },
+    2025015: {
+      title: 'Private house, Pancharevo district',
+      subtitle: 'Pancharevo district, Sofia',
+      description: `Smart Projects Ltd. undertook the installation of natural Bulgarian stone flooring on staircases and pathways, including areas with complex geometric shapes.
+       
+The completed works include:
+ - cladding retaining walls, boundary walls, and the sides of staircases with natural stone
+ - the completed work includes more than 100 steps and 80 sq.m. of pathways and walls.`,
+    },
     Gard: {
       title: 'Sofia',
       subtitle: 'Two Bedrooms',

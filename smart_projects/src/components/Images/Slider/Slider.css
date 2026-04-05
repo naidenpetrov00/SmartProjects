@@ -3,5 +3,12 @@
 }
 
 .lazy-load-image-background {
-  display: unset !important;
+  display: flex !important;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: inherit;
+  border-radius: 16px;
+  overflow: hidden;
 }

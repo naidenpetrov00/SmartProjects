@@ -15,12 +15,20 @@ export const sliderStyles: SliderStyles = {
   }),
   imageListItem: (isSmallScreen) => ({
     height: isSmallScreen ? '340px !important' : '500px !important',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    borderRadius: '16px',
+    overflow: 'hidden',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
   }),
   image: {
     height: '100%',
     width: '100%',
     borderRadius: '16px',
-    // display: 'block',
+    objectFit: 'contain',
+    objectPosition: 'center',
+    backgroundColor: 'transparent',
   },
   imageItemBar: {
     borderBottomLeftRadius: 16,
